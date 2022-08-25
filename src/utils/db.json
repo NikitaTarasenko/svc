@@ -1,0 +1,243 @@
+{
+    "listJSON" : [
+      {
+        "id" : 1,
+        "name":  "Feather",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png" ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 2,
+        "name":  "3DBio",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8bapinscreense.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 3,
+        "name":  "Mobalytics",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 4,
+        "name":  "Holo|one",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 5,
+        "name":  "Patreon",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/pinscreen.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 6,
+        "name":  "Aria Pharmaceuticals",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 7,
+        "name":  "Spin",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 8,
+        "name":  "Speedsize",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 9,
+        "name":  "Prive",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/pinscreen.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 10,
+        "name":  "Muncher",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 11,
+        "name":  "CubiOs",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/pinscreen.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 12,
+        "name":  "8base",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 13,
+        "name":  "Pinscreen",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/pinscreen.png"  ,
+        "description": "Revolutionizing digital communication and online human interactions with user-generated and personalized 3D virtual avatars.",
+        "location": "California, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 14,
+        "name":  "Vyng",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 15,
+        "name":  "Adway",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 16,
+        "name":  "Accern",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 17,
+        "name":  "Volumetric*",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 18,
+        "name":  "Instreamic",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 19,
+        "name":  "3DLook",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+      {
+        "id" : 20,
+        "name":  "Adway",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+
+      {
+        "id" : 21,
+        "name":  "Respeecher",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+
+
+      {
+        "id" : 22,
+        "name":  "Hypoint",
+        "hoverImg":"img/dog.png"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      },
+
+
+      {
+        "id" : 23,
+        "name":  "Racoon.Recovery",
+        "hoverImg":"img/phone.jpg"  ,
+        "img": "img/8base.png"  ,
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "location": "Florida, United States",
+        "date" : "Invested in 2021",
+        "tags" : ["Website", "Crunchbase"]
+      }
+    ]
+}
+
+
+
+ 
