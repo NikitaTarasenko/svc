@@ -16,7 +16,7 @@ const Main = observer(() => {
   const [currentImg, setCurrentImg] = useState("");
   const [isSeenImg, setIsSeenImg] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  
+  //  const [isClickedItem, setClickedItem] = useState(false);
   const imgStyle = isSeenImg ? "showImg" : "hideImg";
 
   useEffect(()=>{
@@ -47,6 +47,7 @@ const Main = observer(() => {
     openModal();
     list.setCurrentListItem(index)
      console.log(toJS(list.currentListItem))
+
   };
 
   const clickOutSide = () => {
@@ -68,7 +69,7 @@ const Main = observer(() => {
           <div className="section__list">
             {Object.keys(data).map((key, index) => (
               <div
-                className="section__list__item"
+                className={`section__list__item + ${(list.currentListItem === index && isOpenModal )? ' section__list__item_selected' : ''}`}
                 key={index}
                 onMouseOver={() => handleMouseOver(data[key])}
                 onMouseOut={handleMouseOut}
