@@ -7,20 +7,20 @@ import { a, useTransition } from "react-spring";
 const AppRouter = () => {
   const location = useLocation();
   const transition = useTransition(location.pathname, {
-    config: {  duration: 600,  mass: 1, tension: 120, friction: 14 },
+    config: {  duration: 800,  mass: 1, tension: 120, friction: 14 },
     // from: { opacity: 0, transform: "scale3d(0,0,0)" },
     // enter: { opacity: 1, transform: "scale3d(1,1,1)" },
     // leave: { opacity: .1, transform: "scale3d(0,0,0)" },
     from: {
       opacity: 0,
       position: "absolute",
-      width: " 0%",
+      width: " 100%",
       left: " 0%",
     
       // transform: `translate3d(100%, 0, 0)`
     },
     enter: {
-      config: {  duration: 700 },
+      config: {  duration: 800 },
       opacity: 1,
       width: " 100%",
        
@@ -28,7 +28,7 @@ const AppRouter = () => {
       //  transform: 'translate3d(0, 0, 0)'
     },
     update: {
-      config: {  duration: 400 },
+      config: {  duration: 500 },
       opacity: 1,
       width: " 100%",
       
@@ -37,7 +37,7 @@ const AppRouter = () => {
     },
     leave: {
       opacity: 0,
-      width: "  0%",
+      width: " 100%",
      
 
       // transform: `translate3d(-50%, 0, 0)`

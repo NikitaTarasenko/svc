@@ -40,6 +40,7 @@ const Main = observer(() => {
   const openModal = () => {
     document.body.style.overflowY = "hidden";
     document.body.style.height = "100vh";
+ 
     setIsOpenModal(true);
   };
 
@@ -54,6 +55,7 @@ const Main = observer(() => {
     setIsOpenModal(false);
     document.body.style.overflowY = "scroll";
     document.body.style.height = "auto";
+ 
   };
 
   return (

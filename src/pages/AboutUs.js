@@ -4,10 +4,12 @@ import Container from "../layouts/Container";
 
 const AboutUs = () => {
   return (
-    <div className="aboutUs" style={{ background: "brown" }}>
+    <div className="aboutUs">
       <Container>
-        <NavBar />
-        aboutus
+        <div className="section headSection">
+          <NavBar />
+          aboutus
+        </div>
       </Container>
     </div>
   );
