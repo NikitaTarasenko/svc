@@ -7,6 +7,7 @@ import SectionGrey from "../layouts/sections/SectionGrey";
 import { observer } from "mobx-react-lite";
 import {Context} from "../index"
 import { toJS } from "mobx";
+import Footer from "../components/Footer";
 
 
 const Main = observer(() => {
@@ -40,6 +41,7 @@ const Main = observer(() => {
   const openModal = () => {
     document.body.style.overflowY = "hidden";
     document.body.style.height = "100vh";
+ 
     setIsOpenModal(true);
   };
 
@@ -54,6 +56,7 @@ const Main = observer(() => {
     setIsOpenModal(false);
     document.body.style.overflowY = "scroll";
     document.body.style.height = "auto";
+ 
   };
 
   return (
@@ -89,6 +92,7 @@ const Main = observer(() => {
             style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
           ></div>
         </SectionGrey>
+        <Footer/>
       </Container>
 
       <Modal isOpen={isOpenModal} clickOutSide={() => clickOutSide()} />
