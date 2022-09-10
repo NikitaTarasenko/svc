@@ -22,7 +22,7 @@ const Members = () => {
           <div className="guysPhotos__circle">150+</div>
         </div>
         <div className="guysPhotosText">
-          Silicon Valley Club is the community of 150+ investors from all around the world. We make investments into
+          Silicon Valley Club is the community of <span className="text_bgInvst">150+ investors</span> from all around the world. We make investments into
           Late Seed and Round A deals alongside top VCs with minimum check of $5,000.
         </div>
       </section>

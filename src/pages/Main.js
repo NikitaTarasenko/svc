@@ -7,6 +7,7 @@ import SectionGrey from "../layouts/sections/SectionGrey";
 import { observer } from "mobx-react-lite";
 import {Context} from "../index"
 import { toJS } from "mobx";
+import Footer from "../components/Footer";
 
 
 const Main = observer(() => {
@@ -91,6 +92,7 @@ const Main = observer(() => {
             style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
           ></div>
         </SectionGrey>
+        <Footer/>
       </Container>
 
       <Modal isOpen={isOpenModal} clickOutSide={() => clickOutSide()} />

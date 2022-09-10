@@ -15,7 +15,7 @@ const WhatWeOffer = () => {
             <div className="offerBlock__topRow">
               <div className="offerBlock__topRow__left">What we offer?</div>
               <div className="offerBlock__topRow__right">
-                Let's join forces to invest in exclusive deals backed up by lead vc on a deal-by-deal basis
+                Let's join forces to invest in exclusive deals backed up by lead vc on a <span className="wwo_bg">deal-by-deal</span> basis
               </div>
             </div>
             <div className="offerBlock__bottomRow">
