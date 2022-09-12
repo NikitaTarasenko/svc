@@ -631,7 +631,9 @@ body {
 .btnModalGrey:hover {
     background: #E6E6E3;
 }
-
+.step{
+    transition: all 0.4s ease-out;
+}
 .guys {
     display: flex;
     justify-content: space-between;
