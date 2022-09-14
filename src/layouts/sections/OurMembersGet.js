@@ -8,9 +8,9 @@ const OurMembersGet = () => {
     const lenthOfContainer = document.querySelector(".timeLine").clientWidth;
     const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36);
     const transformIt = fullWidthOfTimeLine - lenthOfContainer;
-    console.log(arrayItems);
-    console.log(fullWidthOfTimeLine);
-    console.log(transformIt);
+    // console.log(arrayItems);
+    // console.log(fullWidthOfTimeLine);
+    // console.log(transformIt);
 
     gsap.registerPlugin(ScrollTrigger);
 

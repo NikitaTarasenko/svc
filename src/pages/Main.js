@@ -8,8 +8,8 @@ import { observer } from "mobx-react-lite";
 import { Context } from "../index";
 import { toJS } from "mobx";
 import Footer from "../components/Footer";
-import Members from "../layouts/sections/Members";
 import OurMembersGet from "../layouts/sections/OurMembersGet";
+import AboutUsMain from "../layouts/sections/AboutUsMain";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
@@ -61,6 +61,9 @@ const Main = observer(() => {
           <NavBar />
         </section>
         <OurMembersGet />
+
+        <AboutUsMain />
+
         <SectionGrey>
           <div className="section__title">
             <div className="section__title__regText">Our portfolio</div>
@@ -92,8 +95,7 @@ const Main = observer(() => {
             style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
           ></div>
         </SectionGrey>
-        <Members />
-        <Members />
+
         <Footer />
       </Container>
 
