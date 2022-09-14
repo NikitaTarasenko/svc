@@ -5,33 +5,30 @@ import NavBar from "../components/NavBar";
 import Container from "../layouts/Container";
 import SectionGrey from "../layouts/sections/SectionGrey";
 import { observer } from "mobx-react-lite";
-import {Context} from "../index"
+import { Context } from "../index";
 import { toJS } from "mobx";
 import Footer from "../components/Footer";
-
+import Members from "../layouts/sections/Members";
+import OurMembersGet from "../layouts/sections/OurMembersGet";
 
 const Main = observer(() => {
-  const {list} = useContext(Context);
+  const { list } = useContext(Context);
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [currentImg, setCurrentImg] = useState("");
   const [isSeenImg, setIsSeenImg] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   //  const [isClickedItem, setClickedItem] = useState(false);
   const imgStyle = isSeenImg ? "showImg" : "hideImg";
 
-  useEffect(()=>{
-   
-    setData(toJS(list.listData))
+  useEffect(() => {
+    setData(toJS(list.listData));
     // console.log(toJS(list.listData))
-  
-  },[])
+  }, []);
 
-  
   const handleMouseOver = (data) => {
     setCurrentImg(data.hoverImg);
     setIsSeenImg(true);
-    
   };
 
   const handleMouseOut = () => {
@@ -41,28 +38,29 @@ const Main = observer(() => {
   const openModal = () => {
     document.body.style.overflowY = "hidden";
     document.body.style.height = "100vh";
- 
+
     setIsOpenModal(true);
   };
 
   const handleListClick = (index) => {
     openModal();
-    list.setCurrentListItem(index)
-     console.log(toJS(list.currentListItem))
-
+    list.setCurrentListItem(index);
+    console.log(toJS(list.currentListItem));
   };
 
   const clickOutSide = () => {
     setIsOpenModal(false);
     document.body.style.overflowY = "scroll";
     document.body.style.height = "auto";
- 
   };
 
   return (
     <div className="zindexshit">
       <Container>
-        <NavBar />
+        <section className="section mainTop">
+          <NavBar />
+        </section>
+        <OurMembersGet />
         <SectionGrey>
           <div className="section__title">
             <div className="section__title__regText">Our portfolio</div>
@@ -72,7 +70,9 @@ const Main = observer(() => {
           <div className="section__list">
             {Object.keys(data).map((key, index) => (
               <div
-                className={`section__list__item + ${(list.currentListItem === index && isOpenModal )? ' section__list__item_selected' : ''}`}
+                className={`section__list__item + ${
+                  list.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
+                }`}
                 key={index}
                 onMouseOver={() => handleMouseOver(data[key])}
                 onMouseOut={handleMouseOut}
@@ -92,7 +92,9 @@ const Main = observer(() => {
             style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
           ></div>
         </SectionGrey>
-        <Footer/>
+        <Members />
+        <Members />
+        <Footer />
       </Container>
 
       <Modal isOpen={isOpenModal} clickOutSide={() => clickOutSide()} />
