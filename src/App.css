@@ -1614,8 +1614,9 @@ body {
     display: flex;
     overflow-x: space;
     flex-wrap: nowrap;
-    transition: all 1.4s ease-out;
+    transition: all 3.4s ease-in-out;
     padding: 0 57px;
+    overscroll-behavior: contain;
 }
 
 .timeLine__item {

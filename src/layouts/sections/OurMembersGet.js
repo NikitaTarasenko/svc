@@ -6,9 +6,11 @@ const OurMembersGet = () => {
   useEffect(() => {
     const arrayItems = document.querySelectorAll(".timeLine__item");
     const lenthOfContainer = document.querySelector(".timeLine").clientWidth;
-    const fullWidthOfTimeLine = arrayItems.length * (arrayItems[0].clientWidth + 26);
+    const fullWidthOfTimeLine = 4 * (arrayItems[0].clientWidth + 46);
     const transformIt = fullWidthOfTimeLine - lenthOfContainer;
-   
+    console.log(arrayItems);
+    console.log(fullWidthOfTimeLine);
+   console.log(transformIt);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -17,12 +19,12 @@ const OurMembersGet = () => {
         trigger: ".timeLine__item",
          markers: true,
          duration: 2.4,
-        start: "top 60%",
-        end: ()=> `+=${arrayItems[0].offsetHeight}`,
+        start: "top 30%",
+        end: ()=> `+=${arrayItems[0].offsetHeight - 50}`,
         toggleActions: "play none none reverse",
         scrub: 1,
-        pin: '.timeLine',
-        pinSpacing: false,
+        // pin: '.timeLine',
+        // pinSpacing: false,
       },
     });
 
@@ -66,14 +68,14 @@ const OurMembersGet = () => {
               guest speakers address the group monthly on trends driving our industry.
             </div>
           </div>
-
+{/* 
           <div className="timeLine__item">
             <div className="timeLine__item__title">Education for conscious investment</div>
             <div className="timeLine__item__text">
               Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and
               guest speakers address the group monthly on trends driving our industry.
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

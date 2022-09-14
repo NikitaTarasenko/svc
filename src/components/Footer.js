@@ -37,7 +37,7 @@ const Footer = () => {
             start: "top 80%",
             end: ()=> `+=${box.offsetHeight + 500}` ,
             // scrub: true,
-
+            
             // markers: {
             //   startColor : "yellow",
             //   endColor : 'brown',
