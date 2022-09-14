@@ -6,29 +6,29 @@ const OurMembersGet = () => {
   useEffect(() => {
     const arrayItems = document.querySelectorAll(".timeLine__item");
     const lenthOfContainer = document.querySelector(".timeLine").clientWidth;
-    const fullWidthOfTimeLine = 4 * (arrayItems[0].clientWidth + 46);
+    const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36);
     const transformIt = fullWidthOfTimeLine - lenthOfContainer;
     console.log(arrayItems);
     console.log(fullWidthOfTimeLine);
-   console.log(transformIt);
+    console.log(transformIt);
 
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".timeLine__item",
-         markers: true,
-         duration: 2.4,
-        start: "top 30%",
-        end: ()=> `+=${arrayItems[0].offsetHeight - 50}`,
+        trigger: ".section__OurMembersGet",
+        // markers: true,
+        duration: 2.4,
+        start: "top 25%",
+        end: () => `+=${arrayItems[0].offsetHeight + 10}`,
         toggleActions: "play none none reverse",
-        scrub: 1,
+        scrub: 3,
         // pin: '.timeLine',
         // pinSpacing: false,
       },
     });
 
-    tl.to('.timeLine__item', {x : -transformIt,})
+    tl.to(".timeLine__item", { x: -transformIt });
   }, []);
 
   return (
@@ -68,7 +68,31 @@ const OurMembersGet = () => {
               guest speakers address the group monthly on trends driving our industry.
             </div>
           </div>
-{/* 
+
+         <div className="timeLine__item">
+            <div className="timeLine__item__title">Education for conscious investment</div>
+            <div className="timeLine__item__text">
+              Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and
+              guest speakers address the group monthly on trends driving our industry.
+            </div>
+          </div>
+
+           {/* <div className="timeLine__item">
+            <div className="timeLine__item__title">Education for conscious investment</div>
+            <div className="timeLine__item__text">
+              Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and
+              guest speakers address the group monthly on trends driving our industry.
+            </div>
+          </div>
+
+          <div className="timeLine__item">
+            <div className="timeLine__item__title">Education for conscious investment</div>
+            <div className="timeLine__item__text">
+              Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and
+              guest speakers address the group monthly on trends driving our industry.
+            </div>
+          </div>
+
           <div className="timeLine__item">
             <div className="timeLine__item__title">Education for conscious investment</div>
             <div className="timeLine__item__text">
