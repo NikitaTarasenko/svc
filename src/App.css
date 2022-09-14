@@ -1603,13 +1603,20 @@ body {
 }
 
 
-.timeLine {
-    width: inherit;
+.horizontal {
+ 
     overflow-x: hidden;
-   
-  
 }
-.timeLineFull{
+.horizontal .pin_wrap, .horizontal .animation-wrap{
+    display: flex;
+    position: relative;
+    z-index: 1;  
+ 
+    padding: 0 57px;
+    height: 530px;
+}
+
+/* .timeLineFull{
     width: 100%;
     display: flex;
     overflow-x: space;
@@ -1617,12 +1624,13 @@ body {
     transition: all 3.4s ease-in-out;
     padding: 0 57px;
     overscroll-behavior: contain;
-}
+} */
 
 .timeLine__item {
-    flex: 0 0 auto;
+    position: relative;
+    flex: 0 0 300;
     width: 360px;
-    height: 524px;
+    height: 100%;
     padding: 44px 40px 54px 42px;
     display: flex;
     flex-direction: column;
@@ -1631,6 +1639,53 @@ body {
     border-radius: 40px;
     margin-right: 16px;
 }
+
+.horizontal .timeLine__item:before {
+    position: absolute;
+   
+    opacity: .13;
+   
+    z-index: -1;
+    -webkit-transform: translate(-30px, -50px);
+    transform: translate(-30px, -50px);
+    
+}
+
+.horizontal .animation-wrap.to-right {
+    counter-reset: timeLine__item;
+    float: left;
+}
+
+.horizontal .animation-wrap.to-left {
+    counter-reset: timeLine__item 5;
+    float: right; 
+}
+
+.horizontal .animation-wrap.to-right .timeLine__item:before {
+    counter-increment: timeLine__item;
+    content: counter(timeLine__item);
+}
+
+.horizontal .animation-wrap.to-left .timeLine__item:before {
+    counter-increment: timeLine__item -1;
+    content: counter(timeLine__item);
+}
+
+.horizontal .animation-wrap .timeLine__item:nth-child(2n+2) {
+    align-items: flex-start;
+}
+
+.horizontal .animation-wrap .timeLine__item:nth-child(4n+4) {
+    align-items: flex-end;
+}
+
+
+
+
+
+
+
+
 
 .timeLine__item__title {
     font-family: 'Inter';
