@@ -9,7 +9,7 @@ const NavBar = () => {
 
 
   return (
-    <div className="section">
+   
       <div className="nav">
         <div className="nav__logo" onClick={()=> navigate(MAINPAGE_ROUTE)}>SiliconValleyClub</div>
         <div className="nav__nav">
@@ -22,7 +22,7 @@ const NavBar = () => {
           <button className="">Sign up</button>
         </div>
       </div>
-    </div>
+     
   );
 };
 

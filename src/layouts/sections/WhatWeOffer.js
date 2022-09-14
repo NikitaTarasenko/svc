@@ -9,12 +9,12 @@ const WhatWeOffer = ({reff}) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const element = reff.current;
+
     const boxes = gsap.utils.toArray(".step");
 
     boxes.forEach((box, i) => {
-      console.log(element.offsetHeight);
-      console.log(box.offsetTop);
+      // console.log(element.offsetHeight);
+      // console.log(box.offsetTop);
       gsap.fromTo(
         box,
         {
@@ -36,7 +36,7 @@ const WhatWeOffer = ({reff}) => {
             end: ()=> `+=${box.offsetHeight}`,
              scrub: true,
 
-            markers: true,
+            // markers: true,
           },
         }
       );
