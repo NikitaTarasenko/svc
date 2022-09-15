@@ -10,6 +10,9 @@ import { toJS } from "mobx";
 import Footer from "../components/Footer";
 import OurMembersGet from "../layouts/sections/OurMembersGet";
 import AboutUsMain from "../layouts/sections/AboutUsMain";
+import Slider from "../components/Slider";
+import Criteria from "../layouts/sections/Criteria";
+import DealFlow from "../layouts/sections/DealFlow";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
@@ -61,9 +64,7 @@ const Main = observer(() => {
           <NavBar />
         </section>
         <OurMembersGet />
-
         <AboutUsMain />
-
         <SectionGrey>
           <div className="section__title">
             <div className="section__title__regText">Our portfolio</div>
@@ -95,7 +96,9 @@ const Main = observer(() => {
             style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
           ></div>
         </SectionGrey>
-
+        <Criteria />
+        <Slider />
+        <DealFlow/>
         <Footer />
       </Container>
 
