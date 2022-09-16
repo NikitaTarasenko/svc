@@ -67,9 +67,11 @@ const DealFlow = () => {
           <div className="dealFlow__left__item__hover"></div>
         </div>
         <div className="dealFlow__right">
+          {/* <CSSTransition> */}
           <div className="dealFlow__right__count">Step {step[hoverItem].id + 1}</div>
           <div className="dealFlow__right__title">{step[hoverItem].title}</div>
           <div className="dealFlow__right__text" dangerouslySetInnerHTML={{__html:step[hoverItem].text}}></div>
+          {/* </CSSTransition> */}
         </div>
       </div>
     </SectionGrey>
