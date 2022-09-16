@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import ListStore from './store/ListStore'
-
+import "swiper/css/bundle";
 
 export const Context = createContext(null);
 
