@@ -1655,6 +1655,7 @@ body {
 
 
 .section__OurMembersGet {
+    margin-top: 35px;
     padding: 38px 0 136px 0px;
 }
 
@@ -1722,6 +1723,7 @@ body {
     padding: 0 80px;
     margin-bottom: 144px;
     padding-right: 0;
+    padding-bottom: 124px;
 }
 
 .secAboutUs__left {
@@ -1998,6 +2000,174 @@ body {
     text-transform: none;
 
 }
+
+.dealFlow {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 59px;
+    padding-bottom: 120px;
+    width: fit-content;
+}
+
+.dealFlow__left {
+    margin-right: 15px;
+    position: relative;
+}
+
+.dealFlow__left__item {
+    position: relative;
+    z-index: 20;
+    width: 251px;
+    height: 124.75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    margin-bottom: 36px;
+}
+
+/* @keyframes dealflowAnime2 {
+    from {
+        opacity: .8;
+        scale: .7;
+
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+} */
+
+.dealFlow__left__item__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 251px;
+    height: 124.75px;
+    z-index: 2;
+    background-color: #fff;
+    transition: .4s all ease-in-out;
+    border-radius: 32px;
+    
+
+}
+
+.dealFlow__left__item__hover_0 {
+    transform: translateY(0%);
+    
+}
+
+.dealFlow__left__item__hover_1 {
+
+    transform: translateY(130%);
+    
+}
+
+.dealFlow__left__item__hover_2 {
+    transform: translateY(260%);
+   
+}
+
+.dealFlow__left__count {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 110%;
+    /* identical to box height, or 62px */
+    transition: .4s all ease-in-out;
+    letter-spacing: -0.035em;
+
+    color: #000000;
+    margin-bottom: 2px;
+
+}
+
+.dealFlow__left__descr {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    /* identical to box height, or 17px */
+
+    transition: .4s all ease-in-out;
+    color: #000000;
+}
+
+.dealFlow__right {
+    width: 488px;
+    min-height: 454.5px;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 32px;
+    padding: 30px 46px 30px 46px;
+}
+
+.dealFlow__right__count {
+    width: 89px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 21px;
+    border: 1px solid #E6E6E3;
+    border-radius: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.5113px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #000000;
+}
+
+.dealFlow__right__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    /* identical to box height, or 44px */
+
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: #000000;
+
+}
+
+.dealFlow__right__text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    /* or 23px */
+    width: 303.89px;
+    letter-spacing: -0.01em;
+    color: #828282;
+}
+
+.dealFlow__right__text span {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
