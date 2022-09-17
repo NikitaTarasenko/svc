@@ -1677,6 +1677,7 @@ body {
     overscroll-behavior: contain;
 }
 
+
 .timeLine__item {
     flex: 0 0 auto;
     width: 360px;
@@ -2051,24 +2052,24 @@ body {
     background-color: #fff;
     transition: .5s all ease-in-out;
     border-radius: 32px;
-    
+
 
 }
 
 .dealFlow__left__item__hover_0 {
     transform: translateY(0%);
-    
+
 }
 
 .dealFlow__left__item__hover_1 {
 
     transform: translateY(130%);
-    
+
 }
 
 .dealFlow__left__item__hover_2 {
     transform: translateY(260%);
-   
+
 }
 
 .dealFlow__left__count {
@@ -2163,45 +2164,222 @@ body {
 .dealFlowWhite-enter {
     opacity: 0;
     transform: scale(0.9);
-  }
-  .dealFlowWhite-enter-active {
+}
+
+.dealFlowWhite-enter-active {
     opacity: 1;
     transform: translateX(0);
-    transition: .6s all ease;
-  }
-  .dealFlowWhite-exit {
+    transition: .3s all ease;
+}
+
+.dealFlowWhite-exit {
     opacity: 1;
-  }
-  .dealFlowWhite-exit-active {
+}
+
+.dealFlowWhite-exit-active {
     opacity: 0;
     transform: scale(0.9);
-    transition: .6s all ease;
-  }
+    transition: .3s all ease;
+}
+
+.s__upcomingEvents {
+    padding-top: 87px;
+    padding-bottom: 114px;
+
+}
+
+.s__upcomingEvents_Btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 164px;
+    height: 48px;
+    padding: 0;
+    transition: .3s all ease;
+
+}
+
+.s__upcomingEvents_Btn svg {
+    margin-left: 4px;
+    transition: .3s all ease;
+}
+
+.s__upcomingEvents_Btn:hover {
+    padding-left: 30px;
+}
 
 
+.s__upcomingEvents__head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 70px;
+    margin-bottom: 128px;
+}
+
+.timeLineEvents {
+    width: inherit;
+    overflow-x: hidden;
 
 
+}
 
+.timeLineFullEvents {
+    width: 100%;
+    display: flex;
+    overflow-x: space;
+    flex-wrap: nowrap;
+    transition: all 3.4s ease-in-out;
+    padding: 15px 57px;
+    overscroll-behavior: contain;
+}
 
+.timeLineEvents__item {
+    display: flex;
+    flex-direction: column;
 
+    flex: 0 0 auto;
+    width: 336px;
+    height: 404px;
+    margin-right: 18px;
+    padding: 24px 31px 38px 24px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E3;
+    overflow: hidden;
+    border-radius: 24px;
+    cursor: pointer;
+}
 
+.timeLineEvents__item:hover {
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+}
 
+.timeLineEvents__item__head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
 
+.timeLineEvents__item__head__time__date {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
 
+    color: #000000;
+}
 
+.timeLineEvents__item__head__time__hours {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
 
+    color: #9C9C9C;
+}
 
+.timeLineEvents__item__head__status {
+    padding: 2px 8px;
+    border: 1px solid #E6E6E3;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    min-width: 61px;
+    height: 23px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+}
 
+.timeLineEvents__item__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.03em;
 
+    color: #000000;
+    margin-bottom: 8px;
+}
 
+.timeLineEvents__item__descr {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
 
+    /* Gray 4 */
+    margin-bottom: 61px;
+    color: #BDBDBD;
 
+}
 
+.timeLineEvents__item__animeBlock {
+    display: flex;
+    width: 100%;
+    transition: all 0.4s ease-out;
+    transform: translateX(-120%)
+}
 
+.timeLineEvents__item__animeBlock_hovered {
+    transform: translateX(0%)
+}
 
+.timeLineEvents__item__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 279px;
+    height: 84px;
+    background: #E6E6E3;
+    border-radius: 24px;
+    flex: 0 0 auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
 
+    letter-spacing: -0.03em;
+    margin-right: 55px;
+    color: #000000;
+    transition: all .3s ease-in-out;
+}
 
+.timeLineEvents__item__btn svg {
+    margin-left: 15px;
+}
+.timeLineEvents__item__btn:hover{
+    padding-left: 30px;
+    background: #000;
+    color: #E6E6E3;
+}
+.timeLineEvents__item__img {
+    flex: 0 0 auto;
+    background: #000000;
+    border-radius: 24px;
+    width: 149.87px;
+    height: 88.13px;
+    
+}
 
+.timeLineEvents__item__img img {
+    object-fit: cover;
+   
+    border-radius: 24px;
+}
 
 @media(max-width:1460px) {
     .container {

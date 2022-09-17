@@ -6,7 +6,7 @@ const OurMembersGet = () => {
   useEffect(() => {
     const arrayItems = document.querySelectorAll(".timeLine__item");
     const lenthOfContainer = document.querySelector(".timeLine").clientWidth;
-    const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36);
+    const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36); //5 - количество блоков *...
     const transformIt = fullWidthOfTimeLine - lenthOfContainer;
     // console.log(arrayItems);
     // console.log(fullWidthOfTimeLine);

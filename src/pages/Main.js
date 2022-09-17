@@ -13,6 +13,7 @@ import AboutUsMain from "../layouts/sections/AboutUsMain";
 import Slider from "../components/Slider";
 import Criteria from "../layouts/sections/Criteria";
 import DealFlow from "../layouts/sections/DealFlow";
+import UpcomingEvents from "../layouts/sections/UpcomingEvents";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
@@ -99,6 +100,7 @@ const Main = observer(() => {
         <Criteria />
         <Slider />
         <DealFlow/>
+        <UpcomingEvents/>
         <Footer />
       </Container>
 
