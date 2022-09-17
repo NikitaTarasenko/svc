@@ -16,7 +16,7 @@ const UpcomingEvents = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s__upcomingEvents",
-        markers: true,
+        // markers: true,
         duration: 1.4,
         start: "top 25%",
         end: () => `+=${arrayItems[0].offsetHeight + 10}`,

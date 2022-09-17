@@ -20,7 +20,7 @@ const OurMembersGet = () => {
         // markers: true,
         duration: 2.4,
         start: "top 25%",
-        end: () => `+=${arrayItems[0].offsetHeight + 10}`,
+        end: () => `+=${arrayItems[0].offsetHeight + 30}`,
         toggleActions: "play none none reverse",
         scrub: 3,
         // pin: '.timeLine',

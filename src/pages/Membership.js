@@ -5,6 +5,7 @@ import WhatWeOffer from "../layouts/sections/WhatWeOffer";
 import Members from "../layouts/sections/Members";
 import WhatIsSI from "../layouts/sections/WhatIsSI";
 import Footer from "../components/Footer";
+import OurMembersGet from "../layouts/sections/OurMembersGet";
 
 const Membership = () => {
   const ref = useRef(null);
@@ -17,6 +18,7 @@ const Membership = () => {
           <NavBar />
         </div>
         <Members />
+        <OurMembersGet/>
         <WhatWeOffer reff={ref} />
         <WhatIsSI />
         <Footer/>

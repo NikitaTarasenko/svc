@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react";
 import Modal from "../components/Modal";
-import NavBar from "../components/NavBar";
 import Container from "../layouts/Container";
 import SectionGrey from "../layouts/sections/SectionGrey";
 import { observer } from "mobx-react-lite";
@@ -14,6 +13,7 @@ import Slider from "../components/Slider";
 import Criteria from "../layouts/sections/Criteria";
 import DealFlow from "../layouts/sections/DealFlow";
 import UpcomingEvents from "../layouts/sections/UpcomingEvents";
+import MainTop from "../layouts/sections/MainTop";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
@@ -61,9 +61,7 @@ const Main = observer(() => {
   return (
     <div className="zindexshit">
       <Container>
-        <section className="section mainTop">
-          <NavBar />
-        </section>
+        <MainTop/>
         <OurMembersGet />
         <AboutUsMain />
         <SectionGrey>
@@ -99,8 +97,8 @@ const Main = observer(() => {
         </SectionGrey>
         <Criteria />
         <Slider />
-        <DealFlow/>
-        <UpcomingEvents/>
+        <DealFlow />
+        <UpcomingEvents />
         <Footer />
       </Container>
 

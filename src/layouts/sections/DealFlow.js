@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SectionGrey from "./SectionGrey";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 const DealFlow = () => {
   const [hoverItem, setHoverItem] = useState(0);
-  const [anime, setAnime] = useState(false);
+  // const [anime, setAnime] = useState(false);
   const [prevHoverItem, setPrevHoverItem] = useState(0);
   const [firsth0verDone, setFirsth0verDone] = useState(false);
   const [step, setStep] = useState([
@@ -40,7 +40,7 @@ const DealFlow = () => {
     },500)
     setPrevHoverItem(hoverItem);
     setFirsth0verDone(true);
-    setAnime(false);
+    // setAnime(false);
 
     return()=>{
       clearTimeout(timeoutStepCount);
@@ -58,7 +58,7 @@ const DealFlow = () => {
             className="dealFlow__left__item"
             onMouseEnter={() => {
               setHoverItem(0);
-              setAnime(true);
+              // setAnime(true);
             }}
           >
             <div className="dealFlow__left__count">1,500</div>
@@ -69,7 +69,7 @@ const DealFlow = () => {
             className="dealFlow__left__item"
             onMouseEnter={() => {
               setHoverItem(1);
-              setAnime(true);
+              // setAnime(true);
             }}
           >
             <div className="dealFlow__left__count">200</div>
@@ -80,7 +80,7 @@ const DealFlow = () => {
             className="dealFlow__left__item"
             onMouseEnter={() => {
               setHoverItem(2);
-              setAnime(true);
+              // setAnime(true);
             }}
           >
             <div className="dealFlow__left__count">3-4</div>
@@ -94,12 +94,12 @@ const DealFlow = () => {
             {/* <CSSTransition in={anime} classNames="dealFlowWhite" timeout={400}> */}
               <div className="dealFlow__right__count"> Step {currentStep.id + 1} </div>
             {/* </CSSTransition> */}
-            <CSSTransition in={anime} classNames="dealFlowWhite" timeout={600}>
+            {/* <CSSTransition in={anime} classNames="dealFlowWhite" timeout={600}> */}
               <div className="dealFlow__right__title">{currentStep.title}</div>
-            </CSSTransition>
-            <CSSTransition in={anime} classNames="dealFlowWhite" timeout={600}>
+            {/* </CSSTransition> */}
+            {/* <CSSTransition in={anime} classNames="dealFlowWhite" timeout={600}> */}
               <div className="dealFlow__right__text" dangerouslySetInnerHTML={{ __html: currentStep.text }}></div>
-            </CSSTransition>
+            {/* </CSSTransition> */}
           </>
         </div>
       </div>
