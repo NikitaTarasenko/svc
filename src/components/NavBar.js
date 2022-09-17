@@ -18,8 +18,9 @@ const NavBar = () => {
           <div className="nav__nav__link" onClick={()=> navigate(FAQ_ROUTE)}>FAQ’s</div>
         </div>
         <div className="nav__registration">
-          <button className="">Sign in</button>
-          <button className="">Sign up</button>
+          <div className="nav__registration_in">Sign in</div>
+          <div className="nav__registration_up">Sign up</div>
+          <div className="nav__registration__bg"></div>
         </div>
       </div>
      

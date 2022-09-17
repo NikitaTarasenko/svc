@@ -6,8 +6,13 @@ import Mirco from "../layouts/svgs/Mirco";
 import Twit from "../layouts/svgs/Twit";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ABOUTUS_ROUTE, FAQ_ROUTE, MAINPAGE_ROUTE, MEMBERSHIP_ROUTE } from "../utils/consts";
+import { useNavigate } from "react-router-dom";
+
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -19,8 +24,6 @@ const Footer = () => {
         box,
         {
           opacity: 1,
-        
-
           duration:0.4,
         },
         {
@@ -95,10 +98,10 @@ const Footer = () => {
           </div>
 
           <div className="footer__black__flex__col">
-            <div className="footer__black__flex__col__li">About us</div>
-            <div className="footer__black__flex__col__li">Membership</div>
-            <div className="footer__black__flex__col__li">Events</div>
-            <div className="footer__black__flex__col__li">FAQ’s</div>
+            <div className="footer__black__flex__col__li" onClick={()=> navigate(ABOUTUS_ROUTE)}>About us</div>
+            <div className="footer__black__flex__col__li" onClick={()=> navigate(MEMBERSHIP_ROUTE)}>Membership</div>
+            <div className="footer__black__flex__col__li" onClick={()=> navigate(MAINPAGE_ROUTE)}>Events</div>
+            <div className="footer__black__flex__col__li" onClick={()=> navigate(FAQ_ROUTE)}>FAQ’s</div>
           </div>
 
           <div className="footer__black__flex__col">

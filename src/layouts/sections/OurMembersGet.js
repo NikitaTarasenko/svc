@@ -6,11 +6,11 @@ const OurMembersGet = () => {
   useEffect(() => {
     const arrayItems = document.querySelectorAll(".timeLine__item");
     const lenthOfContainer = document.querySelector(".timeLine").clientWidth;
-    const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36);
+    const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36); //5 - количество блоков *...
     const transformIt = fullWidthOfTimeLine - lenthOfContainer;
-    console.log(arrayItems);
-    console.log(fullWidthOfTimeLine);
-    console.log(transformIt);
+    // console.log(arrayItems);
+    // console.log(fullWidthOfTimeLine);
+    // console.log(transformIt);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +20,7 @@ const OurMembersGet = () => {
         // markers: true,
         duration: 2.4,
         start: "top 25%",
-        end: () => `+=${arrayItems[0].offsetHeight + 10}`,
+        end: () => `+=${arrayItems[0].offsetHeight + 30}`,
         toggleActions: "play none none reverse",
         scrub: 3,
         // pin: '.timeLine',
