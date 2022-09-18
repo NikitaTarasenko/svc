@@ -169,6 +169,9 @@ body {
     color: #000;
 }
 
+.mainTop .nav__registration_in:hover~.nav__registration_up {
+    color: #fff;
+}
 
 .nav__registration_in:hover~.nav__registration_up {
     color: #000;
