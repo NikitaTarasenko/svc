@@ -2355,26 +2355,6 @@ body {
 
 
 
-.dealFlowWhite-enter {
-    opacity: 0;
-    transform: scale(0.9);
-}
-
-.dealFlowWhite-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: .3s all ease;
-}
-
-.dealFlowWhite-exit {
-    opacity: 1;
-}
-
-.dealFlowWhite-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: .3s all ease;
-}
 
 .s__upcomingEvents {
     padding-top: 87px;
@@ -2659,7 +2639,7 @@ body {
     display: inline-flex;
     width: 100%;
     flex-wrap: wrap;
-    gap: 187px;
+    gap: 120px 187px;
 
 }
 
@@ -2668,9 +2648,11 @@ body {
 
 
 }
-.s_team__row__item{
+
+.s_team__row__item {
     width: 300px;
 }
+
 .s_advisory__content__item__img {
     width: 162px;
     height: 186.44px;
@@ -2727,6 +2709,172 @@ body {
     flex-wrap: wrap;
     gap: 110px;
 }
+
+
+.faq_S {
+
+    width: 955px;
+ 
+    margin: 0 auto;
+    padding-top: 76px;
+    padding-bottom: 51px;
+}
+
+.faq_s__head {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.faq_s__head__link {
+    padding: 11px 20px;
+    background: inherit;
+    mix-blend-mode: normal;
+    border-radius: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.03em;
+    transition: all 0.3s linear;
+    color: #000000;
+    cursor: pointer;
+    margin-right: 40px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.faq_s__head__link:last-child {
+    margin-right: 0;
+}
+
+.faq_s__head__link:hover {
+    scale: 1.2
+}
+
+.faq_s__head__link_selected {
+    background: #E6E6E3;
+}
+
+.faq_s__head__link_selected:hover {
+    scale: 1
+}
+
+.questionsWrap {
+    width: 100%;
+    min-height: 700px;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.question {
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+    height: 109px;
+
+    border: 1px solid #E6E6E3;
+    border-radius: 32px;
+    padding: 0 40px;
+}
+
+.question__front {
+    display: flex;
+    width: 100%;
+    height: 110px;
+   
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    letter-spacing: -0.05em;
+    cursor: pointer;
+    color: #000000;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.question__front path{
+    margin-left: 30px;
+}
+.question__front:has(.minus) .minus{
+    margin-top: -10px;
+    scale:0.9
+}
+.question_opened {
+    min-height: 178px;
+    height: 100%;
+    background: #E6E6E3;
+}
+
+.question__answer {
+    display: none;
+    padding: 0 0 34px 0;
+    width: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.02em;
+
+    /* Gray 1 */
+
+    color: #333333;
+}
+.question_opened .question__answer{
+    display: block;
+}
+
+
+
+
+.dealFlowWhite-enter {
+
+    transform:  translateX(-100%);
+    /* background-color:red; */
+}
+
+.dealFlowWhite-enter-active {
+ 
+    transform: translateX(0);
+    transition: 1.3s all ease;
+    /* background-color:green; */
+}
+
+.dealFlowWhite-exit {
+    transform:  translateX(0%);
+  
+    /* background-color:blue; */
+    opacity: 1;
+}
+
+.dealFlowWhite-exit-active {
+ 
+    opacity: 0;
+    transform:  translateX(+100%);
+    transition: 1.3s all ease;
+    /* background-color:black; */
+}
+
 
 
 
