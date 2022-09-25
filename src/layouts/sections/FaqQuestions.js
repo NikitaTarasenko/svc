@@ -1,4 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { observer } from "mobx-react-lite";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { Context } from "../..";
 import { q_Investors } from "../../utils/InverorsQuest";
 import { q_Partners } from "../../utils/PartnersQuest";
 import { q_SUps } from "../../utils/SUpsQuest";
@@ -6,7 +8,9 @@ import Minus from "../svgs/Minus";
 import Plus from "../svgs/Plus";
 // import { CSSTransition } from "react-transition-group";
 
-const FaqQuestions = () => {
+const FaqQuestions = observer(() => {
+  const { list } = useContext(Context);
+
   const [currentCateg, setCurrentCateg] = useState(0);
   const categories = [q_Investors, q_SUps, q_Partners];
   const [questions, setQuestions] = useState(categories[0]);
@@ -14,6 +18,12 @@ const FaqQuestions = () => {
   const linkRef = useRef([]);
   const prevLink = useRef();
 
+  const refreshGsap = () => {
+    list.setQuestionsIsOpened(true);
+    setTimeout(() => {
+      list.setQuestionsIsOpened(false);
+    }, 100);
+  };
   useEffect(() => {
     linkRef.current[currentCateg].classList.add("faq_s__head__link_selected");
     linkRef.current.forEach((item, index) => {
@@ -21,6 +31,7 @@ const FaqQuestions = () => {
         setCurrentCateg(index);
         linkRef.current[prevLink.current].classList.remove("faq_s__head__link_selected");
         linkRef.current[index].classList.add("faq_s__head__link_selected");
+      
       });
     });
   }, []);
@@ -28,6 +39,7 @@ const FaqQuestions = () => {
   useEffect(() => {
     prevLink.current = currentCateg;
     setQuestions(categories[currentCateg]);
+    refreshGsap();
   }, [currentCateg]);
 
   const questionClickHandle = (id, iconOpened) => {
@@ -39,6 +51,7 @@ const FaqQuestions = () => {
       }
     });
     setQuestions(elements);
+    refreshGsap();
   };
 
   return (
@@ -70,6 +83,6 @@ const FaqQuestions = () => {
       </div>
     </div>
   );
-};
+});
 
 export default FaqQuestions;

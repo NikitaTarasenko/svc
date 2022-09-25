@@ -78,6 +78,47 @@ body {
     margin: 0 auto;
 }
 
+.top__title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 176px;
+}
+
+.top__h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 120%;
+    /* identical to box height, or 77px */
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+}
+
+.top__title__blue {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120%;
+    /* identical to box height, or 34px */
+
+    text-align: center;
+    letter-spacing: -0.05em;
+
+    /* blue */
+
+    color: #3830FB;
+
+}
+
 .section {
     max-width: 100%;
     width: 100%;
@@ -502,7 +543,8 @@ body {
 
 .nav__nav {
     display: flex;
-    transform: translateX(-15%);
+    align-items: center;
+    transform: translateX(0%);
 
 }
 
@@ -524,13 +566,13 @@ body {
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 17px;
+ 
     /* identical to box height */
     cursor: pointer;
     letter-spacing: -0.03em;
 
     color: #000000;
-    margin-right: 25px;
+    margin-right:35px;
 }
 
 .mainTop .nav__nav__link, .mainTop .nav__logo {
@@ -581,7 +623,9 @@ body {
 .membership {
     animation: anime2 1.1s ease-in-out;
 }
-
+.faq{
+    animation: anime2 1.1s ease-in-out;
+}
 .abs {
     position: absolute;
     width: 100%;
@@ -2714,7 +2758,7 @@ body {
 .faq_S {
 
     width: 955px;
- 
+
     margin: 0 auto;
     padding-top: 76px;
     padding-bottom: 51px;
@@ -2743,12 +2787,18 @@ body {
     color: #000000;
     cursor: pointer;
     margin-right: 40px;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
@@ -2790,7 +2840,7 @@ body {
     display: flex;
     width: 100%;
     height: 110px;
-   
+
     align-items: center;
     justify-content: space-between;
     font-family: 'Inter';
@@ -2804,21 +2854,30 @@ body {
     cursor: pointer;
     color: #000000;
 
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-.question__front path{
+
+.question__front path {
     margin-left: 30px;
 }
-.question__front:has(.minus) .minus{
+
+.question__front:has(.minus) .minus {
     margin-top: -10px;
-    scale:0.9
+    scale: 0.9
 }
+
 .question_opened {
     min-height: 178px;
     height: 100%;
@@ -2840,7 +2899,8 @@ body {
 
     color: #333333;
 }
-.question_opened .question__answer{
+
+.question_opened .question__answer {
     display: block;
 }
 
@@ -2849,28 +2909,28 @@ body {
 
 .dealFlowWhite-enter {
 
-    transform:  translateX(-100%);
+    transform: translateX(-100%);
     /* background-color:red; */
 }
 
 .dealFlowWhite-enter-active {
- 
+
     transform: translateX(0);
     transition: 1.3s all ease;
     /* background-color:green; */
 }
 
 .dealFlowWhite-exit {
-    transform:  translateX(0%);
-  
+    transform: translateX(0%);
+
     /* background-color:blue; */
     opacity: 1;
 }
 
 .dealFlowWhite-exit-active {
- 
+
     opacity: 0;
-    transform:  translateX(+100%);
+    transform: translateX(+100%);
     transition: 1.3s all ease;
     /* background-color:black; */
 }

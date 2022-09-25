@@ -6,13 +6,15 @@ import FaqQuestions from "../layouts/sections/FaqQuestions";
 
 const Faq = () => {
   return (
-    <div>
+    <div className="faq">
       <Container>
         <div className="section headSection">
           <NavBar />
-          фак
+          <div className="top__title">
+            <h1 className="top__h1">FAQ</h1>
+          </div>
         </div>
-        <FaqQuestions/>
+        <FaqQuestions />
         <Footer />
       </Container>
     </div>
