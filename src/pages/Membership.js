@@ -16,6 +16,10 @@ const Membership = () => {
       <Container>
         <div className="section headSection">
           <NavBar />
+          <div className="top__title">
+            <h1 className="top__h1">Membership</h1>
+            <div className="top__title__blue">Welcome to the club</div>
+          </div>
         </div>
         <Members />
         <OurMembersGet/>

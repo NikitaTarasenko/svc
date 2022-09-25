@@ -12,12 +12,14 @@ const AboutUs = () => {
       <Container>
         <div className="section headSection">
           <NavBar />
-          aboutus
+          <div className="top__title">
+            <h1 className="top__h1">About us</h1>
+          </div>
         </div>
-        <AboutUsAbout/>
-        <Advisory/>
-        <Team/>
-        <Footer/>
+        <AboutUsAbout />
+        <Advisory />
+        <Team />
+        <Footer />
       </Container>
     </div>
   );
