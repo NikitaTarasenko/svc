@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Attention from "../layouts/svgs/Attention";
 import FB from "../layouts/svgs/FB";
 import Linkdn from "../layouts/svgs/Linkdn";
@@ -116,7 +116,8 @@ const Footer = observer(() => {
             </div>
           </div>
 
-          <div className="footer__black__flex__col">
+       <div className="footer__black__mob">
+       <div className="footer__black__flex__col">
             <div className="footer__black__flex__col__li" onClick={() => navigate(ABOUTUS_ROUTE)}>
               About us
             </div>
@@ -137,6 +138,7 @@ const Footer = observer(() => {
             <div className="footer__black__flex__col__li greyLinks">GDPR</div>
             <div className="footer__black__flex__col__li greyLinks">Cookie settings</div>
           </div>
+       </div>
         </div>
 
         <div className="speaky">

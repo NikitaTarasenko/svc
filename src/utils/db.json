@@ -5,7 +5,7 @@
         "name":  "Feather",
         "hoverImg":"img/dog.png"  ,
         "img": "img/8base.png" ,
-        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
+        "description": "8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast. 8base is a low-code runtime JavaScript framework that provides tools to help you build full-stack web applications, fast.",
         "location": "Florida, United States",
         "date" : "Invested in 2021",
         "tags" : ["Website", "Crunchbase"]
