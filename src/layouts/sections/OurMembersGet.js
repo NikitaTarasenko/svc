@@ -14,23 +14,82 @@ const OurMembersGet = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section__OurMembersGet",
-        // markers: true,
-        duration: 2.4,
-        start: "top 25%",
-        end: () => `+=${arrayItems[0].offsetHeight + 30}`,
-        toggleActions: "play none none reverse",
-        scrub: 3,
-        // pin: '.timeLine',
-        // pinSpacing: false,
+    ScrollTrigger.matchMedia({
+      // desktop
+      "(min-height: 1005px)": function () {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".section__OurMembersGet",
+            // markers: true,
+            duration: 2.4,
+            start: "top 21%",
+            end: () => `+=${arrayItems[0].offsetHeight - 150}`,
+            toggleActions: "play none none reverse",
+            scrub:3,
+            // pin: '.timeLine',
+            // pinSpacing: false,
+          },
+        });
+        tl.fromTo(".timeLine__item", { x: 0 },
+         { x: -transformIt }, 0);
       },
+      // mobile
+      "(max-height: 1004px) and (min-height: 861px)": function () {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".section__OurMembersGet",
+            // markers: true,
+            duration: 2.4,
+            start: "top 19%",
+            end: () => `+=${arrayItems[0].offsetHeight - 180}`,
+            toggleActions: "play none none reverse",
+            scrub:3,
+            // pin: '.timeLine',
+            // pinSpacing: false,
+          },
+        });
+        tl.fromTo(".timeLine__item", { x: 0 },
+        { x: -transformIt }, 0);
+      },
+      // mobile
+      "(max-height:860px) and (min-height:721px)": function () {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".section__OurMembersGet",
+            // markers: true,
+            duration: 2.4,
+            start: "top 5%",
+            end: () => `+=${arrayItems[0].offsetHeight - 230}`,
+            toggleActions: "play none none reverse",
+            scrub:3,
+            // pin: '.timeLine',
+            // pinSpacing: false,
+          },
+        });
+        tl.fromTo(".timeLine__item", { x: 0 },
+        { x: -transformIt }, 0);
+      },
+      // mobile
+      "(max-height: 720px)": function () {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".section__OurMembersGet",
+            // markers: true,
+            duration: 2.4,
+            start: "top 10%",
+            end: () => `+=${arrayItems[0].offsetHeight - 230}`,
+            toggleActions: "play none none reverse",
+            scrub:3,
+            // pin: '.timeLine',
+            // pinSpacing: false,
+          },
+        });
+        tl.fromTo(".timeLine__item", { x: 0 },
+        { x: -transformIt }, 0);
+      },
+  
     });
-
-    tl.to(".timeLine__item", { x: -transformIt });
   }, []);
-
   return (
     <section className="section section__OurMembersGet">
       <div className="h4_secitonTitle">Our members get</div>
@@ -69,7 +128,7 @@ const OurMembersGet = () => {
             </div>
           </div>
 
-         <div className="timeLine__item">
+          <div className="timeLine__item">
             <div className="timeLine__item__title">Education for conscious investment</div>
             <div className="timeLine__item__text">
               Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and
@@ -77,7 +136,7 @@ const OurMembersGet = () => {
             </div>
           </div>
 
-           {/* <div className="timeLine__item">
+          {/* <div className="timeLine__item">
             <div className="timeLine__item__title">Education for conscious investment</div>
             <div className="timeLine__item__text">
               Formalized education sessions, on topics such as Term Sheets or Governance, are held periodically and

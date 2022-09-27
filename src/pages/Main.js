@@ -59,7 +59,7 @@ const Main = observer(() => {
   };
 
   return (
-    <div className="zindexshit">
+    <div className="zindexsht">
       <Container>
         <MainTop/>
         <OurMembersGet />

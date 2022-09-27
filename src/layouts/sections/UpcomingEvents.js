@@ -13,21 +13,73 @@ const UpcomingEvents = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".s__upcomingEvents",
-        // markers: true,
-        duration: 1.4,
-        start: "top 25%",
-        end: () => `+=${arrayItems[0].offsetHeight + 10}`,
-        toggleActions: "play none none reverse",
-        scrub: 3,
-        // pin: '.timeLine',
-        // pinSpacing: false,
+    ScrollTrigger.matchMedia({
+      // desktop
+      "(min-height: 955px)": function () {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".s__upcomingEvents",
+            // markers: true,
+            duration: 2.4,
+            start: "top 25%",
+            end: () => `+=${arrayItems[0].offsetHeight + 10}`,
+            toggleActions: "play none none reverse",
+            scrub: 3,
+            // pin: '.timeLine',
+            // pinSpacing: false,
+          },
+        });
+        tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
+      },
+      // mobile
+      "(max-height: 954px) and (min-height:850px)": function () {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".s__upcomingEvents",
+            //  markers: true,
+            duration: 2.4,
+            start: "top 15%",
+            end: () => `+=${arrayItems[0].offsetHeight + 10}`,
+            toggleActions: "play none none reverse",
+            scrub: 2.4,
+          },
+        });
+
+        tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
+      },
+
+      "(max-height: 849px) and (min-height:751px)": function () {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".s__upcomingEvents__head",
+            // markers: true,
+            duration: 2.4,
+            start: "top 15%",
+            end: () => `+=${arrayItems[0].offsetHeight - 90}`,
+            toggleActions: "play none none reverse",
+            scrub: 2.4,
+          },
+        });
+
+        tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
+      },
+
+      "(max-height: 750px)": function () {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".s__upcomingEvents__head",
+            // markers: true,
+            duration: 2.4,
+            start: "top 10%",
+            end: () => `+=${arrayItems[0].offsetHeight - 150}`,
+            toggleActions: "play none none reverse",
+            scrub: 2.4,
+          },
+        });
+
+        tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
       },
     });
-
-    tl.to(".timeLineEvents__item", { x: -transformIt });
 
     const arrayAnimeBlocks = document.querySelectorAll(".timeLineEvents__item__animeBlock");
 
@@ -51,8 +103,6 @@ const UpcomingEvents = () => {
       );
     });
   }, []);
-
- 
 
   return (
     <section className="section s__upcomingEvents">
