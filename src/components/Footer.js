@@ -46,7 +46,7 @@ const Footer = observer(() => {
             toggleActions: "play none none restart",
             start: "top 80%",
             endTrigger: 'footer__rights',
-            end: () => `+=${box.offsetHeight + 600}`,
+            end: () => `+=${box.offsetHeight + 3600}`,
             // scrub: true,
             // markers: true,
             invalidateOnRefresh: true

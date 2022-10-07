@@ -4,7 +4,7 @@ import VerySmallArrowDown from "../svgs/VerySmallArrowDown";
 const AboutUsMain = () => {
   return (
     <div>
-      <section className="section secAboutUs">
+      <section className="section secAboutUs secAboutUs_config">
         <div className="sectionWrap">
           <div className="secAboutUs__left">
             <div className="h4_secitonTitle">About us</div>
