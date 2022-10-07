@@ -100,6 +100,7 @@ const Footer = observer(() => {
       </div>
 
       <div className="footer__black">
+      <div className="sectionWrap  sectionWrap_footer__black">
         <div className="footer__black__flex">
           <div className="footer__black__flex__logo">
             SiliconValleyClub
@@ -156,6 +157,7 @@ const Footer = observer(() => {
         </div>
 
         <div className="footer__rights">© svsy.club, 2022</div>
+        </div>
       </div>
     </section>
   );

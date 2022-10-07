@@ -91,6 +91,7 @@ const OurMembersGet = () => {
     });
   }, []);
   return (
+    <div className="sectionWrap">
     <section className="section section__OurMembersGet">
       <div className="h4_secitonTitle">Our members get</div>
 
@@ -162,6 +163,7 @@ const OurMembersGet = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

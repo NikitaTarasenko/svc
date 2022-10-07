@@ -9,7 +9,7 @@ const NavBar = () => {
 
 
   return (
-   
+    <div className="sectionWrap sectionWrap_noFlex">
       <div className="nav">
         <div className="nav__logo" onClick={()=> navigate(MAINPAGE_ROUTE)}>SiliconValleyClub</div>
         <div className="nav__nav">
@@ -22,6 +22,7 @@ const NavBar = () => {
           <div className="nav__registration_up">Sign up</div>
           <div className="nav__registration__bg"></div>
         </div>
+      </div>
       </div>
      
   );

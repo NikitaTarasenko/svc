@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SectionGrey from "./SectionGrey";
-// import { CSSTransition } from "react-transition-group";
 
 const DealFlow = () => {
   const [hoverItem, setHoverItem] = useState(0);
@@ -48,7 +46,9 @@ const DealFlow = () => {
   }, [hoverItem]);
 
   return (
-    <SectionGrey>
+ 
+    <div className="section grey__section secDealFlow ">
+    <div className="sectionWrap sectionWrap_noFlex">
       <div className="section__title__regText">Our dealflow process</div>
       <div className="section__title__date section__title__date_low">every month</div>
 
@@ -103,7 +103,9 @@ const DealFlow = () => {
           </>
         </div>
       </div>
-    </SectionGrey>
+      </div>
+    </div>
+  
   );
 };
 

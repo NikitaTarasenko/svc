@@ -1,12 +1,12 @@
-import React from 'react';
-import NavBar from '../../components/NavBar';
- 
+import React from "react";
+import NavBar from "../../components/NavBar";
 
 const MainTop = () => {
-    return (
-        <section className="section mainTop">
-        <div className="mainTop__Wrap">
-          <NavBar />
+  return (
+    <section className="section mainTop">
+      <div className="mainTop__Wrap">
+        <NavBar />
+        <div className="sectionWrap sectionWrap_noFlex">
           <div className="mainTop__blue">
             <div className="mainTop__title">Invest deal-by-deal together with experienced VCs</div>
             <div className="mainTop__blue__bot">
@@ -15,8 +15,9 @@ const MainTop = () => {
             </div>
           </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default MainTop;

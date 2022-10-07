@@ -30,7 +30,7 @@ const Slider = () => {
           slidesPerView: 3,
           spaceBetweenSlides: 77,
         },
-       700: {
+        700: {
           slidesPerView: 2,
           spaceBetweenSlides: 77,
         },
@@ -45,32 +45,34 @@ const Slider = () => {
 
   return (
     <section className="section section__slider">
-      <h3>Co-investing together with</h3>
-      <div className="slider__title">experienced tVCs and investors</div>
+      <div className="sectionWrap sectionWrap_noFlex">
+        <h3>Co-investing together with</h3>
+        <div className="slider__title">experienced tVCs and investors</div>
 
-      <div className="slider__wraper">
-        <div className="swiper mySwiper">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <img src="img/soft.svg" alt="Soft" />
-            </div>
-            <div className="swiper-slide">
-              <img src="img/rock.svg" alt="rock" />
-            </div>
-            <div className="swiper-slide">
-              <img src="img/lux.svg" alt="lux" />
-            </div>
-            <div className="swiper-slide">
-              <img src="img/tmt.svg" alt="tmt" />
-            </div>
-            <div className="swiper-slide">
-              <img src="img/nvc.svg" alt="nvc" />
+        <div className="slider__wraper">
+          <div className="swiper mySwiper">
+            <div className="swiper-wrapper">
+              <div className="swiper-slide">
+                <img src="img/soft.svg" alt="Soft" />
+              </div>
+              <div className="swiper-slide">
+                <img src="img/rock.svg" alt="rock" />
+              </div>
+              <div className="swiper-slide">
+                <img src="img/lux.svg" alt="lux" />
+              </div>
+              <div className="swiper-slide">
+                <img src="img/tmt.svg" alt="tmt" />
+              </div>
+              <div className="swiper-slide">
+                <img src="img/nvc.svg" alt="nvc" />
+              </div>
             </div>
           </div>
+          {/* <!-- Add Arrows --> */}
+          <SliderLeft />
+          <SliderRight />
         </div>
-        {/* <!-- Add Arrows --> */}
-        <SliderLeft />
-        <SliderRight />
       </div>
     </section>
   );
