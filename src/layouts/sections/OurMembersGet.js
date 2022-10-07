@@ -91,8 +91,9 @@ const OurMembersGet = () => {
     });
   }, []);
   return (
-    <div className="sectionWrap">
+
     <section className="section section__OurMembersGet">
+          <div className="sectionWrap sectionWrap_noFlex">
       <div className="h4_secitonTitle">Our members get</div>
 
       <div className="timeLine">
@@ -162,8 +163,9 @@ const OurMembersGet = () => {
           </div> */}
         </div>
       </div>
+      </div>
     </section>
-    </div>
+
   );
 };
 
