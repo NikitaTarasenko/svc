@@ -105,6 +105,7 @@ const UpcomingEvents = () => {
   }, []);
 
   return (
+    <div className="sectionWrap">
     <section className="section s__upcomingEvents">
       <div className="s__upcomingEvents__head">
         <div className="h4_secitonTitle">Upcomming events</div>
@@ -233,6 +234,7 @@ const UpcomingEvents = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

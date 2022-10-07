@@ -2,7 +2,9 @@ import React from "react";
 
 const AboutUsAbout = () => {
   return (
-    <div className="section s_about">
+   
+    <div className="section s_about">    
+     <div className="sectionWrap">
       <div className="s_about__left">
         <p> Silicon Valley Club was started in 2020.</p>
         <p>
@@ -14,6 +16,7 @@ const AboutUsAbout = () => {
         <div className="s_about__WWO">What we offer?</div>
        <p> We offer exlusive deals for private investors and business angels from all over the world with a check of $10к
         together with experienced VCs into the best startups that we are able to find via our ecosystem.</p>
+      </div>
       </div>
     </div>
   );

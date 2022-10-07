@@ -49,7 +49,7 @@ const Main = observer(() => {
   const handleListClick = (index) => {
     openModal();
     list.setCurrentListItem(index);
-    console.log(toJS(list.currentListItem));
+    // console.log(toJS(list.currentListItem));
   };
 
   const clickOutSide = () => {
@@ -61,40 +61,44 @@ const Main = observer(() => {
   return (
     <div className="zindexsht">
       <Container>
-        <MainTop/>
+        <MainTop />
         <OurMembersGet />
         <AboutUsMain />
-        <SectionGrey>
-          <div className="section__title">
-            <div className="section__title__regText">Our portfolio</div>
-            <div className="section__title__date">2021-2022©</div>
-          </div>
 
-          <div className="section__list">
-            {Object.keys(data).map((key, index) => (
-              <div
-                className={`section__list__item + ${
-                  list.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
-                }`}
-                key={index}
-                onMouseOver={() => handleMouseOver(data[key])}
-                onMouseOut={handleMouseOut}
-                onClick={() => handleListClick(index)}
-              >
-                {data[key].name}.
-              </div>
-            ))}
-            ..
+        <SectionGrey>
+          <div className="sectionWrap sectionWrap_noFlex">
+            <div className="section__title">
+              <div className="section__title__regText">Our portfolio</div>
+              <div className="section__title__date">2021-2022©</div>
+            </div>
+
+            <div className="section__list">
+              {Object.keys(data).map((key, index) => (
+                <div
+                  className={`section__list__item + ${
+                    list.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
+                  }`}
+                  key={index}
+                  onMouseOver={() => handleMouseOver(data[key])}
+                  onMouseOut={handleMouseOut}
+                  onClick={() => handleListClick(index)}
+                >
+                  {data[key].name}.
+                </div>
+              ))}
+              ..
+            </div>
+            <div className="displayFlexBlock">
+              <div className="textStar">*</div>
+              <div className="section__bottom__smallText">Exit</div>
+            </div>
+            <div
+              className={`section__list__img ${imgStyle} `}
+              style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
+            ></div>
           </div>
-          <div className="displayFlexBlock">
-            <div className="textStar">*</div>
-            <div className="section__bottom__smallText">Exit</div>
-          </div>
-          <div
-            className={`section__list__img ${imgStyle} `}
-            style={currentImg ? { background: `url(${currentImg}) no-repeat center center` } : {}}
-          ></div>
         </SectionGrey>
+
         <Criteria />
         <Slider />
         <DealFlow />

@@ -31,7 +31,6 @@ const FaqQuestions = observer(() => {
         setCurrentCateg(index);
         linkRef.current[prevLink.current].classList.remove("faq_s__head__link_selected");
         linkRef.current[index].classList.add("faq_s__head__link_selected");
-      
       });
     });
   }, []);
@@ -56,30 +55,32 @@ const FaqQuestions = observer(() => {
 
   return (
     <div className="section faq_S">
-      <div className="faq_s__head">
-        {links.map((link, i) => (
-          <h4 className="faq_s__head__link " key={i} ref={(el) => (linkRef.current[i] = el)}>
-            {link}
-          </h4>
-        ))}
-      </div>
+      <div className="sectionWrap sectionWrap_noFlex">
+        <div className="faq_s__head">
+          {links.map((link, i) => (
+            <h4 className="faq_s__head__link " key={i} ref={(el) => (linkRef.current[i] = el)}>
+              {link}
+            </h4>
+          ))}
+        </div>
 
-      <div className="questionsWrap">
-        {questions.map((q, index) => (
-          //   <CSSTransition in={switcher} classNames="dealFlowWhite" timeout={1300} >
-          <div
-            className={`question ${q.iconOpened ? "question_opened" : ""}`}
-            onClick={() => questionClickHandle(q.id, !q.iconOpened)}
-            key={q.id}
-          >
-            <div className="question__front">
-              <span>{q.question}</span>
-              {q.iconOpened ? <Minus /> : <Plus />}
+        <div className="questionsWrap">
+          {questions.map((q, index) => (
+            //   <CSSTransition in={switcher} classNames="dealFlowWhite" timeout={1300} >
+            <div
+              className={`question ${q.iconOpened ? "question_opened" : ""}`}
+              onClick={() => questionClickHandle(q.id, !q.iconOpened)}
+              key={q.id}
+            >
+              <div className="question__front">
+                <span>{q.question}</span>
+                {q.iconOpened ? <Minus /> : <Plus />}
+              </div>
+              <div className="question__answer">{q.answer}</div>
             </div>
-            <div className="question__answer">{q.answer}</div>
-          </div>
-          //   </CSSTransition>
-        ))}
+            //   </CSSTransition>
+          ))}
+        </div>
       </div>
     </div>
   );
