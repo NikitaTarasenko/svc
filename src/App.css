@@ -2372,7 +2372,14 @@ body {
     margin-bottom: 2px;
 
 }
-
+#ids{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    
+}
 .dealFlow__left__descr {
     font-family: 'Inter';
     font-style: normal;
@@ -3000,7 +3007,7 @@ body {
 }
 
 .secAboutUs_config{
-    margin-top: -350px !important;
+    margin-top: -50vh !important;
 }
 
 

@@ -4,37 +4,49 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const OurMembersGet = () => {
   useEffect(() => {
-    const thisPinWrap = document.querySelector(".timeLine");
+    // const thisPinWrap = document.querySelector(".timeLine");
     const thisAnimWrap = document.querySelector(".timeLineFull");
 
-    const getToValue = () => -(thisAnimWrap.scrollWidth + 1300 - window.innerWidth);
-
+    const getToValue = (marginValue) => -(thisAnimWrap.scrollWidth + (window.innerWidth / marginValue + 10) - window.innerWidth);
+    console.log(window.innerWidth);
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      ".timeLineFull",
-      {
-        x: 0,
-      },
-      {
-        x: () => getToValue(),
-        ease: "ease",
-        scrollTrigger: {
-          trigger: ".section__OurMembersGet",
-          start: "top 20%",
-          end: "150%",
-          pin: ".timeLine",
-          toggleActions: "play none none reverse",
-          invalidateOnRefresh: true,
-          // duration: 4,
-          // anticipatePin: 1, // may help avoid jump
-            scrub: 4,
-          //markers: true,
+    const initGsap = (marginValue) => {
+      gsap.fromTo(
+        ".timeLineFull",
+        {
+          x: 0,
         },
-      }
-    );
+        {
+          x: () => getToValue(marginValue),
+          ease: "slow",
+          scrollTrigger: {
+            trigger: ".section__OurMembersGet",
+            start: "top 20%",
+            end: "150%",
+            pin: ".timeLine",
+            toggleActions: "play none none reverse",
+            invalidateOnRefresh: true,
+            // duration: 4,
+            // anticipatePin: 1, // may help avoid jump
+            scrub: 2.8,
+            //markers: true,
+          },
+        }
+      );
+    };
 
-    console.log("initGsap");
+    ScrollTrigger.matchMedia({
+      // desktop
+      "(min-width: 2400px)": function () {
+        // console.log(1);
+        initGsap(1);
+      },
+      "(min-width: 1005px) and (max-width: 2399px)": function () {
+        // console.log(2);
+        initGsap(2);
+      },
+    });
   }, []);
 
   return (
