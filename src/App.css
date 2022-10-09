@@ -251,6 +251,8 @@ body {
     margin-bottom: 35px;
     /* border-top-left-radius: 0px;
     border-top-right-radius: 0px; */
+    border-radius:0px;
+    background-color:#000;
 }
 
 .mainTop__Wrap {
@@ -602,12 +604,12 @@ body {
 @keyframes anime {
     from {
         opacity: 0;
-        transform: translate3d(0, 0, 0);
+        
     }
 
     to {
         opacity: 1;
-        transform: translate3d(1, 1, 1);
+        
     }
 }
 
@@ -1920,30 +1922,41 @@ body {
 .section__OurMembersGet {
     margin-top: 35px;
     padding: 38px 0 136px 0px;
-    /* height: 100vh; */
+    overflow-x: hidden;
+    display: flex;
+   
 }
 
 
 .timeLine {
-    width: inherit;
-    overflow-x: hidden;
-
+    
+    position: relative;
+    z-index: 1;  
+    height: 100vh;
+    /* margin-top: 500px; */
 
 }
 
 .timeLineFull {
-    width: 100%;
+    /* width: 100%;
     display: flex;
     overflow-x: space;
     flex-wrap: nowrap;
     transition: all 2.4s linear;
     padding: 0 57px;
-    overscroll-behavior: contain;
+    overscroll-behavior: contain; */
+    display: flex;
+    position: relative;
+    z-index: 1;  
+    height: 100vh;
+    padding-left: 100px;
+    padding-right: 500px;
+   
 }
 
 
 .timeLine__item {
-    flex: 0 0 auto;
+    /*  */
     width: 360px;
     height: 524px;
     padding: 44px 40px 54px 42px;
@@ -1953,8 +1966,16 @@ body {
     background: rgba(214, 213, 208, 0.6);
     border-radius: 40px;
     margin-right: 16px;
-}
 
+
+    position: relative;
+  
+    flex: 0 0 500px;
+}
+.timeLineFull.to-right {
+    counter-reset: timeLine__item;
+    float: left;
+}
 .timeLine__item__title {
     font-family: 'Inter';
     font-style: normal;
@@ -2351,7 +2372,14 @@ body {
     margin-bottom: 2px;
 
 }
-
+#ids{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    
+}
 .dealFlow__left__descr {
     font-family: 'Inter';
     font-style: normal;
@@ -2978,6 +3006,9 @@ body {
     height: 100%;
 }
 
+.secAboutUs_config{
+    margin-top: -50vh !important;
+}
 
 
 

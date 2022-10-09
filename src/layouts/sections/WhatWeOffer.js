@@ -42,7 +42,7 @@ const WhatWeOffer = ({ reff }) => {
   }, []);
 
   return (
-    <div className="section grey__section">
+    <div className="section grey__section secAboutUs_config">
       <div className="offerSection__container">
         <div className="offer__title">The easiest way to discover promising companies and exclusive deals.</div>
         <div className="arrowDown">
