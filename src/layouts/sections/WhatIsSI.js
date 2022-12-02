@@ -3,6 +3,7 @@ import TextBG from "../uiElements/TextBG";
 
 const WhatIsSI = () => {
   return (
+    <div className="sectionWrap">
     <section className="section sectionWisinc ">
       <div className="secTitle">What is Statup.Inc?</div>
       <div className="wisinc">
@@ -45,6 +46,7 @@ const WhatIsSI = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

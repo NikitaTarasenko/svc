@@ -46,7 +46,7 @@ const Footer = observer(() => {
             toggleActions: "play none none restart",
             start: "top 80%",
             endTrigger: 'footer__rights',
-            end: () => `+=${box.offsetHeight + 600}`,
+            end: () => `+=${box.offsetHeight + 3600}`,
             // scrub: true,
             // markers: true,
             invalidateOnRefresh: true
@@ -100,6 +100,7 @@ const Footer = observer(() => {
       </div>
 
       <div className="footer__black">
+      <div className="sectionWrap  sectionWrap_footer__black">
         <div className="footer__black__flex">
           <div className="footer__black__flex__logo">
             SiliconValleyClub
@@ -156,6 +157,7 @@ const Footer = observer(() => {
         </div>
 
         <div className="footer__rights">© svsy.club, 2022</div>
+        </div>
       </div>
     </section>
   );

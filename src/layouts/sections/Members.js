@@ -6,6 +6,7 @@ const Members = () => {
   return (
     <div>
       <section className="  guys">
+      <div className="sectionWrap  ">
         <div className="guysPhotos">
           <div className="guysPhotos__circle">
             <img src="img/man1.png" alt="people..." />
@@ -25,9 +26,11 @@ const Members = () => {
           Silicon Valley Club is the community of <span className="text_bgInvst">150+ investors</span> from all around the world. We make investments into
           Late Seed and Round A deals alongside top VCs with minimum check of $5,000.
         </div>
+        </div>
       </section>
 
       <section className="becomeMember">
+      <div className="sectionWrap sectionWrap_noFlex">
         <ArrowUp />
         <div className="becomeMember__text">
           Our club is based on accredited investors who are professionals, entrepreneurs and industry experts. But we
@@ -35,6 +38,7 @@ const Members = () => {
         </div>
 
         <div className="btn becomeMember__btn">Become a member</div>
+        </div>
       </section>
 
       <div className="bigWhyUs">
