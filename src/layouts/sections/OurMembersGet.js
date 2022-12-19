@@ -39,11 +39,11 @@ const OurMembersGet = () => {
     ScrollTrigger.matchMedia({
       // desktop
       "(min-width: 2400px)": function () {
-        // console.log(1);
+        console.log(1);
         initGsap(1);
       },
       "(min-width: 1005px) and (max-width: 2399px)": function () {
-        // console.log(2);
+        console.log(2);
         initGsap(2);
       },
     });

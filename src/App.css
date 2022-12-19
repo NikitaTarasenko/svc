@@ -3402,13 +3402,22 @@ body {
         height: 150px;
         margin-bottom: 25px;
     }
+    /* .section__OurMembersGet .h4_secitonTitle{
+        margin-top: -70px;
+    }
+    .timeLine{
+        padding-top: 70px;
+    } */
+    
 }
-
+@media(max-height:790px) {
+ 
+}
 @media(max-height:720px) {
-    .timeLineFull {
+    /* .timeLineFull {
 
         transition: all 2s ease-in-out;
-    }
+    } */
 
     .timeLine__item {
 
