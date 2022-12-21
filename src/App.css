@@ -3377,18 +3377,71 @@ body {
         width: 90%;
         margin-bottom: 85px;
     }
+
     .secAboutUs__right {
         width: 100%;
     }
+
     .aboutUs_startext {
         margin-top: 60px;
     }
+
     .secAboutUs__right__flex {
-      
+
         margin-top: 72px;
         justify-content: space-between;
     }
 }
+
+@media(max-width:900px) {
+    .grey__section {
+
+        padding: 80px 0;
+    }
+}
+
+@media(max-width:500px) {
+    .secAboutUs__left__text {
+        margin-top: 70px;
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .secAboutUs {
+
+        padding: 0 30px;
+    }
+
+    .secAboutUs__right {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .secAboutUs__left {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .secAboutUs__right__item {
+
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(max-height: 960px) {
     .secAboutUs_config {
