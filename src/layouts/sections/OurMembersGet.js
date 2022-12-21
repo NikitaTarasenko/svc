@@ -42,9 +42,17 @@ const OurMembersGet = () => {
         console.log(1);
         initGsap(1);
       },
-      "(min-width: 1005px) and (max-width: 2399px)": function () {
+      "(min-height: 921px) and (max-width: 2399px)": function () {
         console.log(2);
         initGsap(2);
+      },
+      "(min-height: 791px) and (max-height: 920px)": function () {
+        console.log(3);
+        initGsap(3);
+      },
+      "(min-height: 500px) and (max-height: 790px)": function () {
+        console.log(10);
+        initGsap(10);
       },
     });
   }, []);
