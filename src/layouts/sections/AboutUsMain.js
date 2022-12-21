@@ -10,8 +10,8 @@ const AboutUsMain = () => {
             <div className="h4_secitonTitle">About us</div>
             <div className="secAboutUs__left__text">
               <p>
-                {" "}
-                <span>Silicon Valley Syndicate club</span> was started in 2020.{" "}
+               
+                <span>SiliconValley Club</span> was started in 2020.
               </p>
               <p>
                 In 2021 we have reached a very important stage and invested in 28 startups overall. It was the year of
@@ -20,10 +20,7 @@ const AboutUsMain = () => {
               <p>We plan to invest in at least 25 more startups this year.</p>
             </div>
 
-            <div className="displayFlexBlock">
-              <div className="textStar">*</div>
-              <div className="section__bottom__smallText">Full exit opportunities 32x ($400mln)</div>
-            </div>
+         
           </div>
           <div className="secAboutUs__right">
             <div className="secAboutUs__right__trac">
@@ -48,8 +45,13 @@ const AboutUsMain = () => {
 
               <div className="secAboutUs__right__item">
                 <div className="secAboutUs__right__item__count">2.87x</div>
-                <div className="secAboutUs__right__item__desrc">current multiplier</div>
+                <div className="secAboutUs__right__item__desrc">current multiplier<div className="textStar">*</div></div>
               </div>
+            </div>
+
+            <div className="displayFlexBlock aboutUs_startext">
+              <div className="textStar">*</div>
+              <div className="section__bottom__smallText">Full exit opportunities 32x ($400mln)</div>
             </div>
           </div>
         </div>
