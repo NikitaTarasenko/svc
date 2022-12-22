@@ -30,67 +30,47 @@ const DealFlow = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.matchMedia({
-      // desktop
-      "(min-height: 1005px)": function () {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#sa",
-            start: "top 35%",
-            end: () => `+=110px`,
-            toggleActions: "restart none restart none",
-           // markers: true,
-          },
-        });
-        tl.to("#sa", {
-          onStart: () => {
-            setHoverItem(0);
-          },
-        });
-      },
-      // mobile
-    });
+
+    const idTrigger = (trigger, start, end, setItem, color) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger,
+          start,
+          end: () => end,
+          toggleActions: "restart none restart none",
+          //markers: { startColor: color, endColor: color },
+        },
+      });
+      tl.to(trigger, {
+        onStart: () => {
+          setHoverItem(setItem);
+        },
+      });
+    };
 
     ScrollTrigger.matchMedia({
       // desktop
       "(min-height: 1005px)": function () {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#psd",
-            start: "top 35%",
-            end: () => `+=200px`,
-            toggleActions: "restart none restart none",
-           // markers: true,
-          },
-        });
-        tl.to("#psd", {
-          onStart: () => {
-            setHoverItem(1);
-          },
-        });
+        idTrigger("#sa", "top 35%", "+=110px", 0, "red");
+        idTrigger("#psd", "top 35%", "+=200px", 1, "blue");
+        idTrigger("#ids", "top 35%", "+=110px", 2, "black");
       },
       // mobile
-    });
-
-    ScrollTrigger.matchMedia({
-      // desktop
-      "(min-height: 1005px)": function () {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#ids",
-            start: "top 35%",
-            end: () => `+=110px`,
-            toggleActions: "restart none restart none",
-           // markers: true,
-          },
-        });
-        tl.to("#ids", {
-          onStart: () => {
-            setHoverItem(2);
-          },
-        });
+      "(min-height: 805px) and (max-height: 1004px)": function () {
+        idTrigger("#sa", "top 45%", "+=130px", 0, "red");
+        idTrigger("#psd", "top 45%", "+=140px", 1, "blue");
+        idTrigger("#ids_mob", "top 45%", "+=110px", 2, "black");
       },
-      // mobile
+      "(min-height: 705px)  and (max-height: 804px)": function () {
+        idTrigger("#sa", "top 45%", "+=160px", 0, "red");
+        idTrigger("#psd", "top 45%", "+=160px", 1, "blue");
+        idTrigger("#ids_mob", "top 45%", "+=110px", 2, "black");
+      },
+      "(max-height: 704px)": function () {
+        idTrigger("#sa", "top 45%", "+=170px", 0, "red");
+        idTrigger("#psd_mob", "top 45%", "+=150px", 1, "blue");
+        idTrigger("#ids_mob", "top 45%", "+=110px", 2, "black");
+      },
     });
   }, []);
 
@@ -156,6 +136,8 @@ const DealFlow = () => {
                 1,500
               </div>
               <div className="dealFlow__left__descr">startup applications</div>
+              <div id="ids_mob"></div>
+              <div id="psd_mob"></div>
             </div>
 
             <div
@@ -169,7 +151,7 @@ const DealFlow = () => {
               <div className="dealFlow__left__descr">pre-selected deals</div>
               <div id="ids"></div>
             </div>
-          
+
             <div
               className="dealFlow__left__item"
               onMouseEnter={() => {
