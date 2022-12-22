@@ -2243,7 +2243,9 @@ body {
 
 .section__criteria__left {
     width: 54%;
+    margin-top: -70px;
 }
+
 
 .section__criteria__left__text {
     font-family: 'Inter';
@@ -2391,19 +2393,28 @@ body {
 
     margin-bottom: 36px;
 }
-
-/* @keyframes dealflowAnime2 {
-    from {
-        opacity: .8;
-        scale: .7;
-
+#ids_mob{
+    position: absolute;
+    bottom: -57px;
+    left: 0;
+    /* width: 10px;
+    height: 10px;
+    background: #000; */
+}
+#psd_mob{
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    /* width: 10px;
+    height: 10px;
+    background: #000; */
+}
+@media(max-height: 704px){
+    #ids_mob{
+        bottom: -80px;
     }
+}
 
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-} */
 
 .dealFlow__left__item__hover {
     position: absolute;

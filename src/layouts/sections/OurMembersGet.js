@@ -11,7 +11,7 @@ const OurMembersGet = () => {
     console.log(window.innerWidth);
     gsap.registerPlugin(ScrollTrigger);
 
-    const initGsap = (marginValue) => {
+    const initGsap = (marginValue, start) => {
       gsap.fromTo(
         ".timeLineFull",
         {
@@ -22,7 +22,7 @@ const OurMembersGet = () => {
           ease: "slow",
           scrollTrigger: {
             trigger: ".section__OurMembersGet",
-            start: "top 20%",
+            start,
             end: "150%",
             pin: ".timeLine",
             toggleActions: "play none none reverse",
@@ -40,19 +40,19 @@ const OurMembersGet = () => {
       // desktop
       "(min-width: 2400px)": function () {
         console.log(1);
-        initGsap(1);
+        initGsap(1, "top 30%");
       },
       "(min-height: 921px) and (max-width: 2399px)": function () {
         console.log(2);
-        initGsap(2);
+        initGsap(2, "top 30%");
       },
       "(min-height: 791px) and (max-height: 920px)": function () {
         console.log(3);
-        initGsap(3);
+        initGsap(3, "top 20%");
       },
       "(min-height: 500px) and (max-height: 790px)": function () {
         console.log(10);
-        initGsap(10);
+        initGsap(10,"top 10%");
       },
     });
   }, []);
