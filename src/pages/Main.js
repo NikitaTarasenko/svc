@@ -69,7 +69,7 @@ const Main = observer(() => {
           <div className="sectionWrap sectionWrap_noFlex">
             <div className="section__title">
               <div className="section__title__regText">Our portfolio</div>
-              <div className="section__title__date">2021-2022©</div>
+              <div className="section__title__date">2020-2023©</div>
             </div>
 
             <div className="section__list">
