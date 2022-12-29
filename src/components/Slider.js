@@ -8,18 +8,16 @@ import SliderRight from "../layouts/svgs/SliderRight";
 const Slider = () => {
   useEffect(() => {
     const swiper = new Swiper(".mySwiper", {
-      slidesPerView: 5,
+      slidesPerView:6,
       spaceBetween: 67,
-      // slidesPerGroup: 5,
       loop: true,
-      loopFillGroupWithBlank: true,
       navigation: {
         nextEl: ".SliderRight",
         prevEl: ".SliderLeft",
       },
       breakpoints: {
         1460: {
-          slidesPerView: 5,
+          slidesPerView: 6,
           spaceBetweenSlides: 67,
         },
         1160: {
@@ -46,8 +44,17 @@ const Slider = () => {
   return (
     <section className="section section__slider">
       <div className="sectionWrap sectionWrap_noFlex">
-        <h3>Co-investing together with</h3>
-        <div className="slider__title">experienced tVCs and investors</div>
+        <div className="slider__top">
+          <div>
+            <h3>Co-investing together with</h3>
+            <div className="slider__title">experienced tVCs and investors</div>
+          </div>
+          <div className="slider__nav">
+            <SliderLeft />
+            <SliderRight />
+            <div className="slider__nav__bg"></div>
+          </div>
+        </div>
 
         <div className="slider__wraper">
           <div className="swiper mySwiper">
@@ -56,7 +63,7 @@ const Slider = () => {
                 <img src="img/soft.svg" alt="Soft" />
               </div>
               <div className="swiper-slide">
-                <img src="img/rock.svg" alt="rock" />
+                <img src="img/rock2.svg" alt="rock" />
               </div>
               <div className="swiper-slide">
                 <img src="img/lux.svg" alt="lux" />
@@ -70,8 +77,6 @@ const Slider = () => {
             </div>
           </div>
           {/* <!-- Add Arrows --> */}
-          <SliderLeft />
-          <SliderRight />
         </div>
       </div>
     </section>

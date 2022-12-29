@@ -13,7 +13,7 @@ const DFlow1 = () => {
           d="M45.2993 59.7591C43.3618 63.0222 38.6382 63.0222 36.7007 59.7591L7.48442 10.5527C5.50548 7.21973 7.9075 3 11.7837 3L70.2163 3C74.0925 3 76.4945 7.21974 74.5156 10.5527L45.2993 59.7591Z"
           fill="url(#paint0_linear_1388_1332)"
         />
-        <path opacity="0.3" d="M15 67H67" stroke="white" strokeWidth="2" strokelinecap="round" />
+        <path opacity="0.3" d="M15 67H67" stroke="white" strokeWidth="2" strokeLinecap="round" />
         <defs>
           <linearGradient
             id="paint0_linear_1388_1332"
