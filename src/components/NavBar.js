@@ -1,59 +1,46 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useEffect } from "react";
-import { useNavigate, useLocation  } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { ABOUTUS_ROUTE, FAQ_ROUTE, MAINPAGE_ROUTE, MEMBERSHIP_ROUTE } from "../utils/consts";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const [scrollDirection, setScrollDirection] = useState(null);
 
-  const initG = ()=>{
-    ScrollTrigger.refresh();
-    gsap.registerPlugin(ScrollTrigger);
-    const height = document.body.scrollHeight;
-    const nav = document.querySelector(".nav");
-    console.log('----------------------------')
-    console.log(height)
-    console.log('----------------------------')
-    
-    
 
-    ScrollTrigger.create({
-      trigger: ".container",
-      start: "top",
-      markers: true,
-      end: 500,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        
-        let { direction, isActive } = self;
-       
-        if (direction === -1) {
-          nav.classList.add("nav_scrolled");
-          nav.classList.remove("nav_hidden");
-        }
-        if (direction === 1) {
-          nav.classList.add("nav_hidden");
-          nav.classList.remove("nav_scrolled");
-        }
-        if (isActive === true) {
-          nav.classList.remove("is-at-top");
-        } else if (isActive === false) {
-          nav.classList.add("is-at-top");
-          nav.classList.remove("nav_scrolled");
-        }
-      },
-    });
-  }
   useEffect(() => {
-    initG()
-  }, []);
+    let lastScrollY = window.pageYOffset;
+    const nav = document.querySelector(".nav");
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? "down" : "up";
 
-  useEffect(()=>{
-    ScrollTrigger.refresh();
-  },[location.pathname])
+      if (direction !== scrollDirection && (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+
+      if (scrollY === 0) {
+        nav.classList.remove("nav_scrolled");
+      }
+    };
+    window.addEventListener("scroll", updateScrollDirection);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+
+      if (scrollDirection === "down") {
+        nav.classList.add("nav_scrolled");
+        nav.classList.remove("nav_hidden");
+      }
+      if (scrollDirection === "up") {
+        nav.classList.add("nav_hidden");
+        nav.classList.remove("nav_scrolled");
+      }
+    };
+  }, [scrollDirection]);
+
+
 
   return (
     <div className="sectionWrap sectionWrap_noFlex">
