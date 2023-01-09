@@ -14,6 +14,7 @@ import Criteria from "../layouts/sections/Criteria";
 import DealFlow from "../layouts/sections/DealFlow";
 import UpcomingEvents from "../layouts/sections/UpcomingEvents";
 import MainTop from "../layouts/sections/MainTop";
+import NavBar from "../components/NavBar";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
@@ -61,6 +62,7 @@ const Main = observer(() => {
   return (
     <div className="zindexsht">
       <Container>
+        <NavBar />
         <MainTop />
         <OurMembersGet />
         <AboutUsMain />

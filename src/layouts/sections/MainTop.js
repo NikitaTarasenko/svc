@@ -5,7 +5,7 @@ const MainTop = () => {
   return (
     <section className="section mainTop">
       <div className="mainTop__Wrap">
-        <NavBar />
+      
         <div className="sectionWrap sectionWrap_noFlex">
           <div className="mainTop__blue">
             <div className="mainTop__title">Invest deal-by-deal together with experienced VCs</div>

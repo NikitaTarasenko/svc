@@ -38,13 +38,13 @@ const OurMembersGet = () => {
 
     ScrollTrigger.matchMedia({
       // desktop
-      "(min-width: 2400px)": function () {
+      "(min-height: 921px) and (min-width: 2400px)": function () {
         console.log(1);
-        initGsap(1, "top 30%");
+        initGsap(1, "top 25%");
       },
       "(min-height: 921px) and (max-width: 2399px)": function () {
         console.log(2);
-        initGsap(2, "top 30%");
+        initGsap(2, "top 25%");
       },
       "(min-height: 791px) and (max-height: 920px)": function () {
         console.log(3);
