@@ -303,18 +303,23 @@ body {
 
 .mainTop {
     position: relative;
-
     min-height: 631.11px;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-
+    height: 100vh;
     z-index: 1;
     margin-bottom: 35px;
     /* border-top-left-radius: 0px;
     border-top-right-radius: 0px; */
     border-radius: 0px;
-    background-color: #000;
+    background-color: #fff;
+}
+.videoMain{
+    
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    z-index: 5;
 }
 
 .mainTop__Wrap {
@@ -333,13 +338,23 @@ body {
     content: '';
     width: 100%;
     height: 100%;
-    background-image: url(../public/img/mainBg.png);
+    background: rgba(0, 0, 0, .4);
+    mix-blend-mode: multiply;
+    /* background-image: url(../public/img/mainBg.png);
     background-size: cover;
-    filter: grayscale(100%);
-    z-index: 2;
-    /* background: rgba(0, 0, 0, 0.4); */
-    border-radius: 40px;
-
+    filter: grayscale(100%); */
+    z-index: 7;
+}
+.mainTop::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    z-index: 7;
+    mix-blend-mode: color;
 }
 
 .mainTop__blue {
@@ -3408,6 +3423,7 @@ a:focus::after {
 @media(min-width:1601px) {
     .mainTop {
         min-height: 731.11px;
+        height: 100%;
     }
 
     .mainTop__blue {
@@ -3416,11 +3432,12 @@ a:focus::after {
 }
 @media(max-width:1600px) {
     .mainTop__blue {
-        bottom: -575px;
+        bottom: -90vh;
     }
 }
 @media(min-width:2000px) {
     .mainTop {
+        height: 100%;
         min-height: 831.11px;
     }
 
@@ -3440,6 +3457,10 @@ a:focus::after {
         width: 100%;
     }
     .nav_NoScrolled{
+        max-width: 88vw;
+        width: 100%;
+    }
+    .is-at-top {
         max-width: 88vw;
         width: 100%;
     }
@@ -3544,7 +3565,10 @@ a:focus::after {
         max-width: 94vw;
         width: 100%;
     }
-
+    .is-at-top {
+        max-width: 94vw;
+        width: 100%;
+    }
     .modalBlock_open {
 
         right: 1%;

@@ -6,7 +6,9 @@ import { ABOUTUS_ROUTE, FAQ_ROUTE, MAINPAGE_ROUTE, MEMBERSHIP_ROUTE } from "../u
 const NavBar = () => {
   const navigate = useNavigate();
   const [scrollDirection, setScrollDirection] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -21,6 +23,11 @@ const NavBar = () => {
       lastScrollY = scrollY > 0 ? scrollY : 0;
 
       if (scrollY === 0) {
+        nav.classList.remove("nav_scrolled");
+      }
+      if(scrollY > 0 && !isScrolled){
+        setIsScrolled(true);
+        nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
       }
     };
@@ -39,8 +46,6 @@ const NavBar = () => {
       }
     };
   }, [scrollDirection]);
-
-
 
   return (
     <div className="sectionWrap sectionWrap_noFlex">
