@@ -8,7 +8,7 @@ import SliderRight from "../layouts/svgs/SliderRight";
 const Slider = () => {
   useEffect(() => {
     const swiper = new Swiper(".mySwiper", {
-      slidesPerView:6,
+      slidesPerView: 6,
       spaceBetween: 67,
       loop: true,
       navigation: {
@@ -63,16 +63,76 @@ const Slider = () => {
                 <img src="img/soft.svg" alt="Soft" />
               </div>
               <div className="swiper-slide">
-                <img src="img/rock2.svg" alt="rock" />
-              </div>
-              <div className="swiper-slide">
                 <img src="img/lux.svg" alt="lux" />
               </div>
+              <div className="swiper-slide">
+                <img src="img/rock2.svg" alt="rock" />
+              </div>
+
               <div className="swiper-slide">
                 <img src="img/tmt.svg" alt="tmt" />
               </div>
               <div className="swiper-slide">
-                <img src="img/nvc.svg" alt="nvc" />
+                <img src="img/icu.svg" alt="nvc" />
+              </div>
+              <div className="swiper-slide">
+                <img src="img/fund.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/ven.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/sams.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/cred.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/ffvc.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/comb.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/arco.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/alli.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/seed.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/alch.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/form.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/haku.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/vis.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/joy.svg" alt="nvc" />
+              </div>
+
+              <div className="swiper-slide">
+                <img src="img/capital.svg" alt="nvc" />
               </div>
             </div>
           </div>
