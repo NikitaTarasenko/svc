@@ -388,12 +388,14 @@ body {
     left: 38px;
     width: 548px;
     height: 310px;
-
+    transition: .4s all ease-in-out;
     padding: 40px;
-    background: #4141FF;
+    background: rgba(65, 65, 255, .6);
     border-radius: 32px;
 }
-
+.mainTop__blue:hover{
+    background: #4141ff;
+}
 .mainTop__title {
     font-family: 'Inter';
     font-style: normal;
@@ -2552,7 +2554,12 @@ a:focus::after {
     background: #3d3b3d;
     border-radius: 25px;
 }
-
+.section__OurMembersGet2 .Slider_navBtn{
+    background: rgb(245 245 244);
+}
+.section__OurMembersGet2 .Slider_navBtn path{
+    transition: .3s all ease-in-out;
+}
 .SliderLeft {
     position: relative;
     transition: .5s all ease-in-out;
@@ -2570,6 +2577,9 @@ a:focus::after {
     background: #C5C5C2;
     transition: .5s all ease-in-out;
 }
+.section__OurMembersGet2 .SliderRight{
+background: #E6E6E3;
+}
 
 .slider__top {
     display: flex;
@@ -2585,8 +2595,23 @@ a:focus::after {
 .SliderLeft:hover {
     background: #C5C5C2;
 }
+.section__OurMembersGet2 .SliderLeft path{
+    fill: rgb(153 153 153);
+}
+.section__OurMembersGet2 .SliderLeft:hover~.SliderRight {
+    background: rgb(245 245 244);
+}
+.section__OurMembersGet2 .SliderLeft:hover~.SliderRight path {
+   fill: rgb(153 153 153);
+}
 
 
+.section__OurMembersGet2 .SliderLeft:hover {
+    background: #E6E6E3;
+}
+.section__OurMembersGet2 .SliderLeft:hover path{
+    fill: #000;
+}
 
 .swiper-wrapper {
     display: flex;
@@ -3979,13 +4004,16 @@ a:focus::after {
         height: 420px;
         flex: 0 0 380px;
     }
+    .mainTop{
+        min-height: 100vh;
+    }
 }
 
 @media(max-height:580px) {
     .timeLine__item {
 
-        height: 280px;
-        flex: 0 0 370px;
+        height:340px;
+        flex: 0 0 420px;
     }
 }
 

@@ -89,16 +89,11 @@ const OurMembersGet = () => {
         },
         "(min-height: 500px) and (max-height: 619px)": function () {
           console.log(4);
-          initGsap(4, "top 8%");
+          initGsap(4, "top 7%");
         },
       });
     } else {
-      // ScrollTrigger.getById("my-id").kill();
-      // let triggers = ScrollTrigger.getAll();
-      // triggers.forEach((trigger) => {
-      //   trigger.kill();
-      // });
-
+  
       const swiper = new Swiper(".mySwiper2", {
         slidesPerView: 2,
         spaceBetween: 20,
@@ -112,12 +107,12 @@ const OurMembersGet = () => {
             slidesPerView: 2,
             spaceBetweenSlides: 20,
           },
-          700: {
-            slidesPerView: 2,
+          800: {
+            slidesPerView:2,
             spaceBetweenSlides: 20,
           },
           // when window width is <= 499px
-          499: {
+           199: {
             slidesPerView: 1,
             spaceBetweenSlides: 20,
           },
