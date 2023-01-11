@@ -99,35 +99,27 @@ const OurMembersGet = () => {
       //   trigger.kill();
       // });
 
-      const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 6,
-        spaceBetween: 67,
+      const swiper = new Swiper(".mySwiper2", {
+        slidesPerView: 2,
+        spaceBetween: 20,
         loop: true,
         navigation: {
           nextEl: ".SliderRight",
           prevEl: ".SliderLeft",
         },
         breakpoints: {
-          1460: {
-            slidesPerView: 6,
-            spaceBetweenSlides: 67,
-          },
-          1160: {
-            slidesPerView: 4,
-            spaceBetweenSlides: 67,
-          },
           900: {
-            slidesPerView: 3,
-            spaceBetweenSlides: 77,
+            slidesPerView: 2,
+            spaceBetweenSlides: 20,
           },
           700: {
             slidesPerView: 2,
-            spaceBetweenSlides: 77,
+            spaceBetweenSlides: 20,
           },
           // when window width is <= 499px
           499: {
             slidesPerView: 1,
-            spaceBetweenSlides: 50,
+            spaceBetweenSlides: 20,
           },
         },
       });
@@ -162,7 +154,7 @@ const OurMembersGet = () => {
       </section>
 
       <section className="section section__OurMembersGet2">
-        <div className="sectionWrap sectionWrap_noFlex">
+        <div className="  sectionWrap_noFlex">
           <div className="ourMembersGetTitleMob">
             <div className="h4_secitonTitle section__OurMembersGe__h4">Our members get</div>
             <div className="slider__nav">
@@ -172,7 +164,7 @@ const OurMembersGet = () => {
             </div>
           </div>
           <div className="slider__wraper">
-            <div className="swiper mySwiper">
+            <div className="swiper mySwiper2">
               <div className="swiper-wrapper">
                 {ourMembersData.map((card) => (
                   <div className="swiper-slide" key={card.key}>

@@ -499,15 +499,18 @@ body {
 
 .section__OurMembersGet2 {
     display: none;
-    padding: 0 44px;
+   
     margin-bottom: 95px;
     min-height: 100vh;
     height: 100%;
 }
-.section__OurMembersGet2 .ourMembersGetTitleMob{
-    margin-bottom: 76px;
+
+.section__OurMembersGet2 .ourMembersGetTitleMob {
+    margin-bottom: 46px;
     margin-top: 30px;
+    padding: 0 44px;
 }
+
 .headSection {
     background: #E6E6E3;
 }
@@ -3990,10 +3993,15 @@ a:focus::after {
     .ourMembersGetTitleMob .slider__nav {
         display: flex;
     }
-    .section__OurMembersGet2{
+
+    .section__OurMembersGet2 {
         margin-bottom: 250px;
     }
-    .section__OurMembersGet2 .timeLine__item{
-        height: 500px;
+
+    .section__OurMembersGet2 .timeLine__item {
+        height: 450px;
+        flex: 0 0 360px;
+        margin-right: 0;
+
     }
 }
