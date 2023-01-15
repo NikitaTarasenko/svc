@@ -33,7 +33,7 @@ const Slider = () => {
           spaceBetweenSlides: 77,
         },
         // when window width is <= 499px
-        499: {
+        99: {
           slidesPerView: 1,
           spaceBetweenSlides: 50,
         },
