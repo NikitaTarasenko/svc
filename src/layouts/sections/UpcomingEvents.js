@@ -33,7 +33,7 @@ const UpcomingEvents = () => {
           spaceBetweenSlides:27,
         },
         // when window width is <= 499px
-        499: {
+        1: {
           slidesPerView: 1,
           spaceBetweenSlides: 20,
         },

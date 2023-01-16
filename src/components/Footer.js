@@ -102,7 +102,7 @@ const Footer = observer(() => {
       <div className="footer__black">
       <div className="sectionWrap  sectionWrap_footer__black">
         <div className="footer__black__flex">
-          <div className="footer__black__flex__logo">
+          <div className="footer__black__flex__logo"  onClick={() => navigate(MAINPAGE_ROUTE)}>
             SiliconValleyClub
             <div className="footer__black__social">
               <a href="/">

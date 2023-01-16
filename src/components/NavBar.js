@@ -16,15 +16,22 @@ const NavBar = () => {
 
   useEffect(() => {
     const nav = document.querySelector(".nav");
+    const navBg = document.querySelector(".nav__nav_mob__opacity");
+
     if (isClicked) {
       nav.classList.add("nav_mob_opened");
+      navBg.classList.remove("nav__nav_mob__opacity_closed");
     } else {
       nav.classList.remove("nav_mob_opened");
+      navBg.classList.add("nav__nav_mob__opacity_closed");
     }
   }, [isClicked]);
+
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
     const nav = document.querySelector(".nav");
+    const navBg = document.querySelector(".nav__nav_mob__opacity");
+
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? "down" : "up";
@@ -33,15 +40,21 @@ const NavBar = () => {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
-
+       
+      if(isClicked === true) {
+        setIsClicked(false);
+      }
       if (scrollY === 0) {
         nav.classList.remove("nav_scrolled");
+        
       }
       if (scrollY > 0 && !isScrolled) {
         setIsScrolled(true);
         nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
+       
       }
+    
     };
     window.addEventListener("scroll", updateScrollDirection);
 
@@ -51,16 +64,23 @@ const NavBar = () => {
       if (scrollDirection === "down") {
         nav.classList.add("nav_scrolled");
         nav.classList.remove("nav_hidden");
+        console.log('down')
       }
       if (scrollDirection === "up") {
         nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
+        console.log('up')
+       
       }
     };
   }, [scrollDirection]);
 
+   
+
   return (
     <div className="sectionWrap sectionWrap_noFlex">
+      <div className="nav__nav_mob__opacity" onClick={clickMenuBtnHandle}>
+      </div>
       <div className="nav  nav_NoScrolled ">
         <div className="nav_flex_mob">
           <div className="nav__logo" onClick={() => navigate(MAINPAGE_ROUTE)}>
@@ -102,26 +122,23 @@ const NavBar = () => {
             )}
           </div>
         </div>
-          <div className="nav__nav_mob">
-            <div className="nav__nav__link_mob" onClick={() => navigate(ABOUTUS_ROUTE)}>
-              About us
-            </div>
-            <div className="nav__nav__link_mob" onClick={() => navigate(MEMBERSHIP_ROUTE)}>
-              Membership
-            </div>
-            <div className="nav__nav__link_mob" onClick={() => navigate(FAQ_ROUTE)}>
-              FAQ’s
-            </div>
+        <div className="nav__nav_mob">
+          <div className="nav__nav__link_mob" onClick={() => navigate(ABOUTUS_ROUTE)}>
+            About us
+          </div>
+          <div className="nav__nav__link_mob" onClick={() => navigate(MEMBERSHIP_ROUTE)}>
+            Membership
+          </div>
+          <div className="nav__nav__link_mob" onClick={() => navigate(FAQ_ROUTE)}>
+            FAQ’s
+          </div>
 
-            <div className="nav__registration_mob">
+          <div className="nav__registration_mob">
             <div className="nav__registration_in">Log in</div>
             <div className="nav__registration_up">Sign up</div>
             <div className="nav__registration__bg"></div>
           </div>
-          </div>
-
-    
-
+        </div>
       </div>
     </div>
   );

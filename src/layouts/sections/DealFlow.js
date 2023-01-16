@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DFlow1 from "../svgs/DFlow1";
@@ -32,6 +32,7 @@ const DealFlow = () => {
             start: "top 90%",
             end: () => `+=${box.offsetHeight}`,
             scrub: true,
+          
             // markers: true,
           },
         }
