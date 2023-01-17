@@ -46,7 +46,7 @@ const DealFlow = () => {
         <div className="howToJ">Our dealflow process</div>
         <div className="stepStep">every month</div>
 
-        <div className="steps">
+        <div className="steps main_steps">
           <div className="step step__block_dealFlow">
             <div className="step__left">
               <div className="step__block_dealFlow__count">1</div>
