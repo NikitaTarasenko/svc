@@ -1,7 +1,7 @@
 export const q_SUps = [
   {
     id: 0,
-    question: "Question",
+    question: "How to...?",
     answer:
       "The following example uses the mousedown, mousemove, and mouseup events to allow the user to draw on an HTML canvas. Its functionality is simple: the thickness of the line is set to 1, and the color is always black.",
     iconOpened: false,

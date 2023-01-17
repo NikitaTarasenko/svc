@@ -87,12 +87,12 @@ const Footer = observer(() => {
         <div className="footer__right__container">
           <div className="fAnimeBlock footer__right" data-n="0">
             <div className="footer__right__head">
-              <div className="footer__right__head__title">Current deal</div>
+              <div className="footer__right__head__title">Last deal</div>
               <div className="footer__right__live">
-                <div></div>LIVE
+                <div></div>NEW
               </div>
             </div>
-            <div className="footer__right__text">Fintech startup. Seed. $3.5bln valuation. $5mln raising.</div>
+            <div className="footer__right__text">Artificial intelligence. Series A. $5.5 mln raised.</div>
           </div>
           <div className="fAnimeBlock footer__right__opaciti1" data-n="1"></div>
           <div className="fAnimeBlock footer__right__opaciti2" data-n="2"></div>
@@ -102,7 +102,7 @@ const Footer = observer(() => {
       <div className="footer__black">
       <div className="sectionWrap  sectionWrap_footer__black">
         <div className="footer__black__flex">
-          <div className="footer__black__flex__logo">
+          <div className="footer__black__flex__logo"  onClick={() => navigate(MAINPAGE_ROUTE)}>
             SiliconValleyClub
             <div className="footer__black__social">
               <a href="/">

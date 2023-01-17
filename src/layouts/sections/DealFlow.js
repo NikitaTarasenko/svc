@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DFlow1 from "../svgs/DFlow1";
@@ -32,6 +32,7 @@ const DealFlow = () => {
             start: "top 90%",
             end: () => `+=${box.offsetHeight}`,
             scrub: true,
+          
             // markers: true,
           },
         }
@@ -45,7 +46,7 @@ const DealFlow = () => {
         <div className="howToJ">Our dealflow process</div>
         <div className="stepStep">every month</div>
 
-        <div className="steps">
+        <div className="steps main_steps">
           <div className="step step__block_dealFlow">
             <div className="step__left">
               <div className="step__block_dealFlow__count">1</div>
