@@ -64,12 +64,12 @@ const NavBar = () => {
       if (scrollDirection === "down") {
         nav.classList.add("nav_scrolled");
         nav.classList.remove("nav_hidden");
-        console.log('down')
+      
       }
       if (scrollDirection === "up") {
         nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
-        console.log('up')
+         
        
       }
     };

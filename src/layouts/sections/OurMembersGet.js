@@ -36,7 +36,7 @@ const OurMembersGet = () => {
   }, []);
 
   function makeMembers() {
-    console.log(isMobile);
+  
     gsap.registerPlugin(ScrollTrigger);
     if (!isMobile) {
       const thisAnimWrap = document.querySelector(".timeLineFull");
@@ -72,23 +72,23 @@ const OurMembersGet = () => {
       ScrollTrigger.matchMedia({
         // desktop
         "(min-height: 921px) and (min-width: 2400px)": function () {
-          console.log(1);
+        
           initGsap(1, "top 25%");
         },
         "(min-height: 921px) and (max-width: 2399px)": function () {
-          console.log(2);
+         
           initGsap(2, "top 15%");
         },
         "(min-height: 791px) and (max-height: 920px)": function () {
-          console.log(2);
+         
           initGsap(2, "top 15%");
         },
         "(min-height: 620px) and (max-height: 790px)": function () {
-          console.log(3);
+       
           initGsap(3, "top 10%");
         },
         "(min-height: 500px) and (max-height: 619px)": function () {
-          console.log(4);
+         
           initGsap(4, "top 7%");
         },
       });
