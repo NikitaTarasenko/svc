@@ -87,11 +87,11 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
             </div>
           </div>
 
-          <div className="modal__bottom">
+          {/* <div className="modal__bottom"> */}
             <Button type="btnModalGrey" onClick={handleClick}>
               Next deal
             </Button>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

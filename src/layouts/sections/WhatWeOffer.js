@@ -101,7 +101,7 @@ const WhatWeOffer = ({ reff }) => {
         <div className="howToJ">How to join us?</div>
         <div className="stepStep">The step-by-step guide</div>
 
-        <div className="steps">
+        <div className="steps membship_steps">
           <div className="step step__block" data-speed="1.00">
             <div className="step__block__count">1</div>
             <div className="step__block__text">

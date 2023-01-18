@@ -1,11 +1,12 @@
 import React from "react";
-import NavBar from "../../components/NavBar";
 
 const MainTop = () => {
   return (
-    <section className="section mainTop">
+    <section className="section mainTop" autoPlay loop muted>
+      <video className="videoMain" autoPlay loop muted>
+        <source src="img/videoBg.mp4" type="video/mp4" />
+      </video>
       <div className="mainTop__Wrap">
-        <NavBar />
         <div className="sectionWrap sectionWrap_noFlex">
           <div className="mainTop__blue">
             <div className="mainTop__title">Invest deal-by-deal together with experienced VCs</div>
