@@ -193,7 +193,9 @@ body {
 :is(.zindexsht .nav_scrolled) .nav__registration_up {
     color: #fff;
 }
-
+:is(.zindexsht .nav_scrolled) .nav__registration_in:hover{
+    color: #fff;
+}
 
 
 .nav__registration_in {
@@ -244,9 +246,7 @@ body {
     color: #000;
 }
 
-:is(.zindexsht .nav_NoScrolled) .nav__registration_in:hover {
-    color: #fff;
-}
+ 
 
 :is(.aboutUs .nav_NoScrolled) .nav__registration_in:hover {
     color: #fff;
@@ -320,11 +320,11 @@ body {
     color: #000;
 }
 
-:is(.zindexsht .nav_NoScrolled, .zindexsht .nav__registration_mob) .nav__registration_up {
+:is(.zindexsht .nav__registration_mob,   ) .nav__registration_up {
     color: #fff;
 }
 
-:is(.zindexsht .nav__registration_mob, .zindexsht .nav_NoScrolled) .nav__registration__bg {
+:is(.zindexsht .nav__registration_mob, ) .nav__registration__bg {
     background: #000;
 }
 
@@ -2222,7 +2222,7 @@ a:focus::after {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
     transition: .4s all ease-in-out;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .footer__black__flex__col__li:hover::after {
@@ -2490,7 +2490,7 @@ a:focus::after {
     font-size: 32px;
     line-height: 39px;
     letter-spacing: -0.05em;
-
+    min-height: 75px;
     color: #000000;
 
 }
@@ -2502,7 +2502,7 @@ a:focus::after {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: -0.05em;
-
+    min-height: 80px;
     color: #000000;
 }
 
@@ -3701,10 +3701,10 @@ a:focus::after {
 @media(max-width:1600px) {}
 
 @media(min-width:2000px) {
-    .mainTop {
+    /* .mainTop {
         height: 100%;
         min-height: 831.11px;
-    }
+    } */
 
 }
 

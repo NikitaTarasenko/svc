@@ -9,7 +9,7 @@ const DealFlow = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const boxes = gsap.utils.toArray(".step");
+    const boxes = gsap.utils.toArray(".main_steps .step");
 
     boxes.forEach((box, i) => {
       gsap.fromTo(

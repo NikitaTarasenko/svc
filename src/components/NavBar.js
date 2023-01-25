@@ -40,21 +40,18 @@ const NavBar = () => {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
-       
-      if(isClicked === true) {
+
+      if (isClicked === true) {
         setIsClicked(false);
       }
       if (scrollY === 0) {
         nav.classList.remove("nav_scrolled");
-        
       }
       if (scrollY > 0 && !isScrolled) {
         setIsScrolled(true);
         nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
-       
       }
-    
     };
     window.addEventListener("scroll", updateScrollDirection);
 
@@ -64,23 +61,17 @@ const NavBar = () => {
       if (scrollDirection === "down") {
         nav.classList.add("nav_scrolled");
         nav.classList.remove("nav_hidden");
-      
       }
       if (scrollDirection === "up") {
         nav.classList.add("nav_hidden");
         nav.classList.remove("nav_scrolled");
-         
-       
       }
     };
   }, [scrollDirection]);
 
-   
-
   return (
     <div className="sectionWrap sectionWrap_noFlex">
-      <div className="nav__nav_mob__opacity" onClick={clickMenuBtnHandle}>
-      </div>
+      <div className="nav__nav_mob__opacity" onClick={clickMenuBtnHandle}></div>
       <div className="nav  nav_NoScrolled ">
         <div className="nav_flex_mob">
           <div className="nav__logo" onClick={() => navigate(MAINPAGE_ROUTE)}>
@@ -103,11 +94,11 @@ const NavBar = () => {
             <div className="nav__registration__bg"></div>
           </div>
 
-          <div className="nav_mobileBtn">
+          <div className="nav_mobileBtn" onClick={clickMenuBtnHandle}>
             {!isClicked ? (
-              <More onClickHandle={clickMenuBtnHandle} />
+              <More/>
             ) : (
-              <div className="closeBtn" onClick={clickMenuBtnHandle}>
+              <div className="closeBtn" >
                 <div className="close-button">
                   <div className="in">
                     <div className="close-button-block"></div>
