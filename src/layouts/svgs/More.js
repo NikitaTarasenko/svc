@@ -1,8 +1,8 @@
 import React from "react";
 
-const More = ({onClickHandle}) => {
+const More = () => {
   return (
-    <div onClick={onClickHandle}>
+    <div>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M10 10.8334C10.4603 10.8334 10.8334 10.4603 10.8334 10.0001C10.8334 9.53984 10.4603 9.16675 10 9.16675C9.53978 9.16675 9.16669 9.53984 9.16669 10.0001C9.16669 10.4603 9.53978 10.8334 10 10.8334Z"
