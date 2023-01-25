@@ -36,7 +36,7 @@ const OurMembersGet = () => {
   }, []);
 
   function makeMembers() {
-    // console.log(isMobile);
+
     gsap.registerPlugin(ScrollTrigger);
     if (!isMobile) {
       const thisAnimWrap = document.querySelector(".timeLineFull");
@@ -71,7 +71,7 @@ const OurMembersGet = () => {
 
       ScrollTrigger.matchMedia({
         // desktop
-        "(min-height: 921px) and (min-width: 2400px)": function () {
+        "(min-height: 921px) and (min-width: 2400px)": function () {    
           // console.log(1);
           initGsap(1, "top 25%");
         },
