@@ -15,11 +15,13 @@ import DealFlow from "../layouts/sections/DealFlow";
 import UpcomingEvents from "../layouts/sections/UpcomingEvents";
 import MainTop from "../layouts/sections/MainTop";
 import NavBar from "../components/NavBar";
+import axios from "axios";
 
 const Main = observer(() => {
   const { list } = useContext(Context);
 
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentImg, setCurrentImg] = useState("");
   const [isSeenImg, setIsSeenImg] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -27,9 +29,28 @@ const Main = observer(() => {
   const imgStyle = isSeenImg ? "showImg" : "hideImg";
 
   useEffect(() => {
-    setData(toJS(list.listData));
-    // console.log(toJS(list.listData))
+    getData()
   }, []);
+
+ 
+
+  async function getData() {
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      " Access-Control-Allow-Origin": "http://spr.sv.club",
+    };
+
+    try {
+      const response = await axios.get("/rest.php?target=portfolio", { headers });
+      list.setListData(response.data);
+      setData(toJS(list.listData));
+      setIsLoading(false);
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const handleMouseOver = (data) => {
     setCurrentImg(data.hoverImg);
@@ -43,14 +64,12 @@ const Main = observer(() => {
   const openModal = () => {
     document.body.style.overflowY = "hidden";
     document.body.style.height = "100vh";
-
     setIsOpenModal(true);
   };
 
   const handleListClick = (index) => {
     openModal();
     list.setCurrentListItem(index);
-    // console.log(toJS(list.currentListItem));
   };
 
   const clickOutSide = () => {
@@ -75,10 +94,10 @@ const Main = observer(() => {
             </div>
 
             <div className="section__list">
-              {Object.keys(data).map((key, index) => (
+              {isLoading ? 'Loading.' : Object.keys(data).map((key, index) => (
                 <div
                   className={`section__list__item + ${
-                    list.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
+                    data.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
                   }`}
                   key={index}
                   onMouseOver={() => handleMouseOver(data[key])}
