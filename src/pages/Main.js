@@ -29,16 +29,14 @@ const Main = observer(() => {
   const imgStyle = isSeenImg ? "showImg" : "hideImg";
 
   useEffect(() => {
-    getData()
+    getData();
   }, []);
-
- 
 
   async function getData() {
     const headers = {
       Accept: "application/json",
       "Content-Type": "application/json",
-      " Access-Control-Allow-Origin": "http://spr.sv.club",
+      " Access-Control-Allow-Origin": "http://spr.sv.club"
     };
 
     try {
@@ -46,7 +44,7 @@ const Main = observer(() => {
       list.setListData(response.data);
       setData(toJS(list.listData));
       setIsLoading(false);
-
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -94,19 +92,21 @@ const Main = observer(() => {
             </div>
 
             <div className="section__list">
-              {isLoading ? 'Loading.' : Object.keys(data).map((key, index) => (
-                <div
-                  className={`section__list__item + ${
-                    data.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
-                  }`}
-                  key={index}
-                  onMouseOver={() => handleMouseOver(data[key])}
-                  onMouseOut={handleMouseOut}
-                  onClick={() => handleListClick(index)}
-                >
-                  {data[key].name}.
-                </div>
-              ))}
+              {isLoading
+                ? "Loading."
+                : Object.keys(data).map((key, index) => (
+                    <div
+                      className={`section__list__item + ${
+                        data.currentListItem === index && isOpenModal ? " section__list__item_selected" : ""
+                      }`}
+                      key={index}
+                      onMouseOver={() => handleMouseOver(data[key])}
+                      onMouseOut={handleMouseOut}
+                      onClick={() => handleListClick(index)}
+                    >
+                      {data[key].name}.
+                    </div>
+                  ))}
               ..
             </div>
             <div className="displayFlexBlock">

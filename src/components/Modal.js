@@ -23,8 +23,13 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
   }, [list.listData]);
 
   useEffect(() => {
-    if (JSON.stringify(currentData) !== "{}" && typeof currentData !== "undefined") {
+    if (JSON.stringify(currentData) !== "{}"
+     && typeof currentData !== "undefined"
+     && typeof currentData.links === "object"
+    ) {
       setIsLoaded(true);
+      // console.log(currentData)
+      // console.log(toJS(list.listData))
     }
   }, [currentData]);
 
@@ -56,12 +61,14 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
               </div>
               <div className="modalBlock__content__wrapper">
                 <div className="modalBlock__content__tags">
-                  {Object.entries(currentData.links).map(([linkName, value], index) => (
-                    <Tag key={index} link={value}>
-                      {linkName}
-                    </Tag>
-                  ))}
-                </div>
+                  { 
+                      Object.entries(currentData.links).map(([linkName, value], index) => (
+                        <Tag key={index} link={value}>
+                          {linkName}
+                        </Tag>
+                      ))                  
+                }
+                </div>  
 
                 <div className="modalBlock__content__location">
                   <img src="img/location.svg" alt="Location" />
