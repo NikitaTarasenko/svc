@@ -13,7 +13,7 @@ const Loader = ({ size, color }) => {
     default:
       styles = "lds-ellipsis";
   }
-  const colors = color == "white" ? "lds-ellipsis_small_white" : "";
+  const colors = color === "white" ? "lds-ellipsis_white" : "";
 
   return (
     <div className={[styles, colors].join(" ")}>

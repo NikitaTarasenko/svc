@@ -6,19 +6,23 @@ import Swiper from "swiper";
 import axios from "axios";
 import { useState } from "react";
 import Loader from "../uiElements/Loader";
+import { UpcomEvData } from "../../utils/UpcomEvData";
 
 const UpcomingEvents = () => {
+  // let [mySwiper, setMySwiper] = useState(null);
   const [events, setEvents] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isNotLoadedImg, setNotLoadedImg] = useState(false)
+  const [isNotLoadedImg, setNotLoadedImg] = useState(false);
   useEffect(() => {
     getData();
   }, []);
 
   useEffect(() => {
-    setIsLoaded(true);
+    console.log(isLoaded);
+    // Object.values(events).map(event => console.log(event))
     if (isLoaded) {
       animationOnHover();
+      console.log("isLoaded");
     }
   }, [events]);
 
@@ -33,15 +37,19 @@ const UpcomingEvents = () => {
       const response = await axios.get("/rest.php?target=event", { headers });
       console.log(response.data);
       setEvents(response.data);
+      setIsLoaded(true);
     } catch (error) {
       console.error(error);
     }
   }
 
   useEffect(() => {
-    const swiper = new Swiper(".mySwiper3", {
+    const mySwiper = new Swiper(".mySwiper3", {
       slidesPerView: 4,
-      spaceBetween: 27,
+      spaceBetween: 25,
+      renderExternalUpdate: true,
+      observer: true,
+      observeParents: true,
       loop: false,
       navigation: {
         nextEl: ".SliderRight",
@@ -68,6 +76,7 @@ const UpcomingEvents = () => {
         }
       }
     });
+    mySwiper.update();
   }, []);
 
   const animationOnHover = () => {
@@ -98,7 +107,7 @@ const UpcomingEvents = () => {
     if (Boolean(data)) {
       return data;
     } else {
-     return  <Loader size={size} />;
+      return <Loader size={size} />;
     }
   };
   return (
@@ -115,76 +124,48 @@ const UpcomingEvents = () => {
         </div>
 
         <div className="slider__wraper">
-          {isLoaded
-           ?
-            <div className="swiper mySwiper3">
-              <div className="swiper-wrapper">
-              {
-                Object.values(events).map((card) => (
-                  <div className="swiper-slide" key={card.id}>
-                    <div className="timeLineEvents__item">
-                      <div className="timeLineEvents__item__head">
-                        <div className="timeLineEvents__item__head__time">
-                          <div className="timeLineEvents__item__head__time__date">
-                            {
-                              checkForLoader(card.date , 'sm')
-                            }
-                          </div>
-                          <div className="timeLineEvents__item__head__time__hours">
-                            {
-                              checkForLoader(card.time , 'sm')
-                            }
-                          </div>
-                        </div>
-                        <div className="timeLineEvents__item__head__status">
-                          {
-                           checkForLoader(card.status, 'sm')
-                          }
-                        </div>
+          <div className="swiper mySwiper3">
+            <div className="swiper-wrapper">
+              {Object.values(!isLoaded ? {} : events).map((card) => (
+                <div className="swiper-slide" key={card.id}>
+                  <div className="timeLineEvents__item">
+                    <div className="timeLineEvents__item__head">
+                      <div className="timeLineEvents__item__head__time">
+                        <div className="timeLineEvents__item__head__time__date">{checkForLoader(card.date, "sm")}</div>
+                        <div className="timeLineEvents__item__head__time__hours">{checkForLoader(card.time, "sm")}</div>
                       </div>
+                      <div className="timeLineEvents__item__head__status">{checkForLoader(card.status, "sm")}</div>
+                    </div>
 
-                      <div className="timeLineEvents__item__type">
-                            {
-                              checkForLoader(card.type , 'sm')
-                            }
-                        </div>
-                      <div className="timeLineEvents__item__descr">
-                           {
-                              checkForLoader(card.text , 'lg')
-                            }
-                        </div>
+                    <div className="timeLineEvents__item__type">{checkForLoader(card.type, "sm")}</div>
+                    <div className="timeLineEvents__item__descr">{checkForLoader(card.text, "lg")}</div>
 
-                      <div className="timeLineEvents__item__animeBlock">
-                        <div
-                            className="timeLineEvents__item__btn"
-                            onClick={()=> window.open(card.link_showDetails, "_blank")}
-                          >
-                            Show details
-                          <ArrowRR />
-                        </div>
-                        <div className="timeLineEvents__item__img">
-                          { 
-                             !isNotLoadedImg
-                             ? 
-                             <img src={card.img} alt="svs"
-                             onLoad={()=> setNotLoadedImg(false)}
-                             onError={()=> setNotLoadedImg(true)}/>
-                             :
-                             <Loader size='lg' color='white'/>
-                          }
-                         
-                        </div>
+                    <div className="timeLineEvents__item__animeBlock">
+                      <div
+                        className="timeLineEvents__item__btn"
+                        onClick={() => window.open(card.link_showDetails, "_blank")}
+                      >
+                        Show details
+                        <ArrowRR />
+                      </div>
+                      <div className="timeLineEvents__item__img">
+                        {!isNotLoadedImg ? (
+                          <img
+                            src={card.img}
+                            alt="svs"
+                            onLoad={() => setNotLoadedImg(false)}
+                            onError={() => setNotLoadedImg(true)}
+                          />
+                        ) : (
+                          <Loader size="lg" color="white" />
+                        )}
                       </div>
                     </div>
                   </div>
-                ))
-              }
-                          
-              </div>
+                </div>
+              ))}
             </div>
-            :
-              <Loader size='lg' />
-          }
+          </div>
         </div>
       </section>
     </div>

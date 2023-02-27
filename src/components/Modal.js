@@ -5,10 +5,12 @@ import Tag from "../layouts/uiElements/Tag";
 import { Context } from "../index";
 import { toJS } from "mobx";
 import CloseBtn from "../layouts/uiElements/CloseBtn";
+import Loader from "../layouts/uiElements/Loader";
 
 const Modal = observer(({ isOpen, clickOutSide }) => {
   const { list } = useContext(Context);
 
+  const [isNotLoadedImg, setNotLoadedImg] = useState(false);
   const [currentData, setCurrentData] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,13 +25,12 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
   }, [list.listData]);
 
   useEffect(() => {
-    if (JSON.stringify(currentData) !== "{}"
-     && typeof currentData !== "undefined"
-     && typeof currentData.links === "object"
+    if (
+      JSON.stringify(currentData) !== "{}" &&
+      typeof currentData !== "undefined" &&
+      typeof currentData.links === "object"
     ) {
       setIsLoaded(true);
-      // console.log(currentData)
-      // console.log(toJS(list.listData))
     }
   }, [currentData]);
 
@@ -38,7 +39,6 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
     setCurrentData(data[list.currentListItem]);
     setCurrentIndex(list.currentListItem);
 
-    console.log(list.currentListItem);
   }, [list.currentListItem]);
 
   const handleClick = () => {
@@ -49,6 +49,7 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
     }
   };
 
+  
   return (
     <div className={`modalWrapper ${visibilityModal}`} onClick={clickOutSide}>
       <div className={`modalBlock ${visibilityContent}`} onClick={(e) => e.stopPropagation()}>
@@ -61,14 +62,12 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
               </div>
               <div className="modalBlock__content__wrapper">
                 <div className="modalBlock__content__tags">
-                  { 
-                      Object.entries(currentData.links).map(([linkName, value], index) => (
-                        <Tag key={index} link={value}>
-                          {linkName}
-                        </Tag>
-                      ))                  
-                }
-                </div>  
+                  {Object.entries(currentData.links).map(([linkName, value], index) => (
+                    <Tag key={index} link={value}>
+                      {linkName}
+                    </Tag>
+                  ))}
+                </div>
 
                 <div className="modalBlock__content__location">
                   <img src="img/location.svg" alt="Location" />
@@ -80,16 +79,27 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
                 <div className="modalBlock__content__date">{currentData.date}</div>
 
                 <div className="modalBlock__content__logo">
-                  <img src={currentData.logo} alt="logo" />
+                  {!isNotLoadedImg ? (
+                    <img
+                      src={currentData.logo}
+                      alt="logo"
+                      onLoad={() => setNotLoadedImg(false)}
+                      onError={() => setNotLoadedImg(true)}
+                    />
+                  ) : (
+                   <div className="modal_loader">
+                     <Loader size="lg"  />
+                   </div>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* <div className="modal__bottom"> */}
+ 
             <Button type="btnModalGrey" onClick={handleClick}>
               Next deal
             </Button>
-            {/* </div> */}
+ 
           </div>
         ) : (
           "Loading..."
