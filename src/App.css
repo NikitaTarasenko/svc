@@ -3994,12 +3994,21 @@ a:focus::after {
 
 }
 
-
+@media(max-width:1600px){
+    .s__upcomingEvents__head{
+        max-width: 88vw;
+        width: 100%;
+       
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+}
 @media(max-width:1460px) {
     .sectionWrap {
         max-width: 88vw;
         width: 100%;
     }
+
 
     .nav_scrolled {
         max-width: 88vw;
@@ -4245,7 +4254,7 @@ a:focus::after {
 @media(max-width:1430px) {
 
     .s__upcomingEvents__head {
-        padding: 0 10px;
+        padding: 0 50px;
         margin-bottom: 100px;
     }
 
