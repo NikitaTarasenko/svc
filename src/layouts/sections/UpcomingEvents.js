@@ -2,43 +2,86 @@ import React, { useEffect } from "react";
 import ArrowRR from "../svgs/ArrowRR";
 import SliderLeft from "../svgs/SliderLeft";
 import SliderRight from "../svgs/SliderRight";
-import { UpcomEvData } from "../../utils/UpcomEvData";
 import Swiper from "swiper";
+import axios from "axios";
+import { useState } from "react";
+import Loader from "../uiElements/Loader";
+ 
 
 const UpcomingEvents = () => {
+ 
+  const [events, setEvents] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isNotLoadedImg, setNotLoadedImg] = useState(false);
   useEffect(() => {
-    const arrayItems = document.querySelectorAll(".timeLineEvents__item");
-    const arrayAnimeBlocks = document.querySelectorAll(".timeLineEvents__item__animeBlock");
+    getData();
+  }, []);
 
-    const swiper = new Swiper(".mySwiper3", {
+  useEffect(() => {
+    console.log(isLoaded);
+    // Object.values(events).map(event => console.log(event))
+    if (isLoaded) {
+      animationOnHover();
+      console.log("isLoaded");
+    }
+  }, [events]);
+
+  async function getData() {
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      " Access-Control-Allow-Origin": "http://spr.sv.club"
+    };
+
+    try {
+      const response = await axios.get("/rest.php?target=event", { headers });
+      console.log(response.data);
+      setEvents(response.data);
+      setIsLoaded(true);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    const mySwiper = new Swiper(".mySwiper3", {
       slidesPerView: 4,
-      spaceBetween: 27,
+      spaceBetween: 25,
+      renderExternalUpdate: true,
+      observer: true,
+      observeParents: true,
       loop: false,
       navigation: {
         nextEl: ".SliderRight",
-        prevEl: ".SliderLeft",
+        prevEl: ".SliderLeft"
       },
       breakpoints: {
-        1460: {
+        1645: {
           slidesPerView: 4,
-          spaceBetweenSlides: 27,
+          spaceBetweenSlides: 27
         },
         1160: {
           slidesPerView: 3,
-          spaceBetweenSlides: 27,
+          spaceBetweenSlides: 25
         },
-    
+
         790: {
           slidesPerView: 2,
-          spaceBetweenSlides:27,
+          spaceBetweenSlides: 25
         },
         // when window width is <= 499px
         1: {
           slidesPerView: 1,
-          spaceBetweenSlides: 20,
-        },
-      },
+          spaceBetweenSlides: 20
+        }
+      }
     });
+    mySwiper.update();
+  }, []);
+
+  const animationOnHover = () => {
+    const arrayItems = document.querySelectorAll(".timeLineEvents__item");
+    const arrayAnimeBlocks = document.querySelectorAll(".timeLineEvents__item__animeBlock");
 
     arrayItems.forEach((item, index) => {
       item.addEventListener(
@@ -59,8 +102,14 @@ const UpcomingEvents = () => {
         false
       );
     });
-  }, []);
-
+  };
+  const checkForLoader = (data, size) => {
+    if (Boolean(data)) {
+      return data;
+    } else {
+      return <Loader size={size} />;
+    }
+  };
   return (
     <div className="sectionWrap">
       <section className="section s__upcomingEvents">
@@ -77,27 +126,39 @@ const UpcomingEvents = () => {
         <div className="slider__wraper">
           <div className="swiper mySwiper3">
             <div className="swiper-wrapper">
-              {UpcomEvData.map((card) => (
+              {Object.values(!isLoaded ? {} : events).map((card) => (
                 <div className="swiper-slide" key={card.id}>
                   <div className="timeLineEvents__item">
                     <div className="timeLineEvents__item__head">
                       <div className="timeLineEvents__item__head__time">
-                        <div className="timeLineEvents__item__head__time__date">{card.date}</div>
-                        <div className="timeLineEvents__item__head__time__hours">{card.time}</div>
+                        <div className="timeLineEvents__item__head__time__date">{checkForLoader(card.date, "sm")}</div>
+                        <div className="timeLineEvents__item__head__time__hours">{checkForLoader(card.time, "sm")}</div>
                       </div>
                       <div className="timeLineEvents__item__head__status">{card.status}</div>
                     </div>
 
-                    <div className="timeLineEvents__item__type">{card.type}</div>
-                    <div className="timeLineEvents__item__descr">{card.text}</div>
+                    <div className="timeLineEvents__item__type">{checkForLoader(card.type, "sm")}</div>
+                    <div className="timeLineEvents__item__descr">{checkForLoader(card.text, "lg")}</div>
 
                     <div className="timeLineEvents__item__animeBlock">
-                      <div className="timeLineEvents__item__btn">
+                      <div
+                        className="timeLineEvents__item__btn"
+                        onClick={() => window.open(card.link_showDetails, "_blank")}
+                      >
                         Show details
                         <ArrowRR />
                       </div>
                       <div className="timeLineEvents__item__img">
-                        <img src={card.img} alt="svs" />
+                        {!isNotLoadedImg ? (
+                          <img
+                            src={card.img}
+                            alt="svs"
+                            onLoad={() => setNotLoadedImg(false)}
+                            onError={() => setNotLoadedImg(true)}
+                          />
+                        ) : (
+                          <Loader size="lg"   />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -112,76 +173,3 @@ const UpcomingEvents = () => {
 };
 
 export default UpcomingEvents;
-
-// const lenthOfContainer = document.querySelector(".timeLineEvents").clientWidth;
-// const fullWidthOfTimeLine = 5 * (arrayItems[0].clientWidth + 36); //5 - количество блоков *...
-// const transformIt = fullWidthOfTimeLine - lenthOfContainer;
-// gsap.registerPlugin(ScrollTrigger);
-
-// ScrollTrigger.matchMedia({
-//   // desktop
-//   "(min-height: 955px)": function () {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".s__upcomingEvents",
-//         // markers: true,
-//         duration: 2.4,
-//         start: "top 25%",
-//         end: () => `+=${arrayItems[0].offsetHeight + 10}`,
-//         toggleActions: "play none none reverse",
-//         scrub: 3,
-//         // pin: '.timeLine',
-//         // pinSpacing: false,
-//       },
-//     });
-//     tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
-//   },
-//   // mobile
-//   "(max-height: 954px) and (min-height:850px)": function () {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".s__upcomingEvents",
-//         //  markers: true,
-//         duration: 2.4,
-//         start: "top 15%",
-//         end: () => `+=${arrayItems[0].offsetHeight + 10}`,
-//         toggleActions: "play none none reverse",
-//         scrub: 2.4,
-//       },
-//     });
-
-//     tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
-//   },
-
-//   "(max-height: 849px) and (min-height:751px)": function () {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".s__upcomingEvents__head",
-//         // markers: true,
-//         duration: 2.4,
-//         start: "top 15%",
-//         end: () => `+=${arrayItems[0].offsetHeight - 90}`,
-//         toggleActions: "play none none reverse",
-//         scrub: 2.4,
-//       },
-//     });
-
-//     tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
-//   },
-
-//   "(max-height: 750px)": function () {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".s__upcomingEvents__head",
-//         // markers: true,
-//         duration: 2.4,
-//         start: "top 10%",
-//         end: () => `+=${arrayItems[0].offsetHeight - 150}`,
-//         toggleActions: "play none none reverse",
-//         scrub: 2.4,
-//       },
-//     });
-
-//     tl.fromTo(".timeLineEvents__item", { x: 0 }, { x: -transformIt }, 0);
-//   },
-// });

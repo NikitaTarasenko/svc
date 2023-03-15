@@ -8,21 +8,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ABOUTUS_ROUTE, FAQ_ROUTE, MAINPAGE_ROUTE, MEMBERSHIP_ROUTE } from "../utils/consts";
 import { useNavigate } from "react-router-dom";
-// import pt from 'prop-types';
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
 
-
 const Footer = observer(() => {
-
   const { list } = useContext(Context);
   const navigate = useNavigate();
 
-  const initGsap = ()=>{
+  const initGsap = () => {
     gsap.registerPlugin(ScrollTrigger);
-    if(list.questionsIsOpened){
-      console.log('gsap')
-    }
     const fboxes = gsap.utils.toArray(".fAnimeBlock");
 
     fboxes.forEach((box, i) => {
@@ -31,7 +25,7 @@ const Footer = observer(() => {
         box,
         {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.4
         },
         {
           opacity: 1,
@@ -44,31 +38,33 @@ const Footer = observer(() => {
             trigger: box,
             toggleClass: `fAnimeBlock_on${number}`,
             toggleActions: "play none none restart",
-            start: "top 80%",
-            endTrigger: 'footer__rights',
-            end: () => `+=${box.offsetHeight + 3600}`,
+            start: "top 90%",
+            endTrigger: "footer__rights",
+            end: () => `+=${box.offsetHeight + 1400}`,
             // scrub: true,
-            // markers: true,
+          //  markers: true,
             invalidateOnRefresh: true
             // markers: {
             //   startColor : "yellow",
             //   endColor : 'brown',
             //   fontSize : '5rem'
             // },
-          },
+          }
         }
       );
     });
-  }
+  };
 
   useEffect(() => {
-    if(list.questionsIsOpened){
-      ScrollTrigger.refresh()
+    if (list.questionsIsOpened) {
+      ScrollTrigger.refresh();
     }
-  },[list.questionsIsOpened]);
+  }, [list.questionsIsOpened]);
 
   useEffect(() => {
-    initGsap();
+    setTimeout(()=>{
+      initGsap();
+    },300)
   }, []);
 
   return (
@@ -100,73 +96,71 @@ const Footer = observer(() => {
       </div>
 
       <div className="footer__black">
-      <div className="sectionWrap  sectionWrap_footer__black">
-        <div className="footer__black__flex">
-          <div className="footer__black__flex__logo"  onClick={() => navigate(MAINPAGE_ROUTE)}>
-            SiliconValleyClub
-            <div className="footer__black__social">
-              <a href="/">
-                <Linkdn />
-              </a>
-              <a href="/">
-                <FB />
-              </a>
-              <a href="/">
-                <Twit />
-              </a>
+        <div className="sectionWrap  sectionWrap_footer__black">
+          <div className="footer__black__flex">
+            <div className="footer__black__flex__logo" onClick={() => navigate(MAINPAGE_ROUTE)}>
+              SiliconValleyClub
+              <div className="footer__black__social">
+                <a href="/">
+                  <Linkdn />
+                </a>
+                <a href="/">
+                  <FB />
+                </a>
+                <a href="/">
+                  <Twit />
+                </a>
+              </div>
+            </div>
+
+            <div className="footer__black__mob">
+              <div className="footer__black__flex__col">
+                <div className="footer__black__flex__col__li" onClick={() => navigate(ABOUTUS_ROUTE)}>
+                  About us
+                </div>
+                <div className="footer__black__flex__col__li" onClick={() => navigate(MEMBERSHIP_ROUTE)}>
+                  Membership
+                </div>
+                <div className="footer__black__flex__col__li" onClick={() => navigate(MAINPAGE_ROUTE)}>
+                  Events
+                </div>
+                <div className="footer__black__flex__col__li" onClick={() => navigate(FAQ_ROUTE)}>
+                  FAQ’s
+                </div>
+              </div>
+
+              <div className="footer__black__flex__col">
+                <div className="footer__black__flex__col__li greyLinks">Privacy policy</div>
+                <div className="footer__black__flex__col__li greyLinks">DPA</div>
+                <div className="footer__black__flex__col__li greyLinks">GDPR</div>
+                <div className="footer__black__flex__col__li greyLinks">Cookie settings</div>
+              </div>
             </div>
           </div>
 
-       <div className="footer__black__mob">
-       <div className="footer__black__flex__col">
-            <div className="footer__black__flex__col__li" onClick={() => navigate(ABOUTUS_ROUTE)}>
-              About us
+          <div className="speaky">
+            <div className="speaky__head">
+              <div className="speaky__head__title">Contact us</div>
+              <Mirco />
             </div>
-            <div className="footer__black__flex__col__li" onClick={() => navigate(MEMBERSHIP_ROUTE)}>
-              Membership
-            </div>
-            <div className="footer__black__flex__col__li" onClick={() => navigate(MAINPAGE_ROUTE)}>
-              Events
-            </div>
-            <div className="footer__black__flex__col__li" onClick={() => navigate(FAQ_ROUTE)}>
-              FAQ’s
+            <div className="speaky__text">Got questions? Send us a message</div>
+
+            <div className="btn speakyBtn">Send a voice message</div>
+
+            <div className="speaky__bottom">
+              Powered by <span>Speaky</span>
             </div>
           </div>
 
-          <div className="footer__black__flex__col">
-            <div className="footer__black__flex__col__li greyLinks">Privacy policy</div>
-            <div className="footer__black__flex__col__li greyLinks">DPA</div>
-            <div className="footer__black__flex__col__li greyLinks">GDPR</div>
-            <div className="footer__black__flex__col__li greyLinks">Cookie settings</div>
-          </div>
-       </div>
-        </div>
-
-        <div className="speaky">
-          <div className="speaky__head">
-            <div className="speaky__head__title">Contact us</div>
-            <Mirco />
-          </div>
-          <div className="speaky__text">Got questions? Send us a message</div>
-
-          <div className="btn speakyBtn">Send a voice message</div>
-
-          <div className="speaky__bottom">
-            Powered by <span>Speaky</span>
-          </div>
-        </div>
-
-        <div className="footer__rights">© svsy.club, 2022</div>
+          <div className="footer__rights">© svsy.club, 2022</div>
         </div>
       </div>
     </section>
   );
 });
 
-
 // Footer.propTypes = {
 //   questionsIsOpened : pt.bool,
 // }
-
 
 export default Footer;

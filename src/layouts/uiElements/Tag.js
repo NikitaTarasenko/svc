@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Tag = ({children}) => {
+const Tag = ({children, link = '/'}) => {
     return (
-        <div className='tag'>
+        <div className='tag' onClick={()=> window.open(link, "_blank")}>
             {children}
         </div>
     );

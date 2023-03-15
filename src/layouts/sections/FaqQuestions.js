@@ -1,22 +1,63 @@
+import axios from "axios";
 import { observer } from "mobx-react-lite";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../..";
-import { q_Investors } from "../../utils/InverorsQuest";
-import { q_Partners } from "../../utils/PartnersQuest";
-import { q_SUps } from "../../utils/SUpsQuest";
+ 
 import Minus from "../svgs/Minus";
 import Plus from "../svgs/Plus";
 // import { CSSTransition } from "react-transition-group";
 
 const FaqQuestions = observer(() => {
   const { list } = useContext(Context);
-
+  const [q_Investors, setI] = useState([]);
+  const [q_SUps, setS] = useState([]);
+  const [q_Partners, setP] = useState([]);
   const [currentCateg, setCurrentCateg] = useState(0);
   const categories = [q_Investors, q_SUps, q_Partners];
-  const [questions, setQuestions] = useState(categories[0]);
+  const [questions, setQuestions] = useState({});
   const [links, setLinks] = useState(["For investors", "For startups", "For partners"]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const linkRef = useRef([]);
   const prevLink = useRef();
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      " Access-Control-Allow-Origin": "http://spr.sv.club"
+    };
+
+    try {
+      const response = await axios.get("/rest.php?target=faq", { headers });
+      
+      Object.values(response.data).forEach((item) => {
+        if(item.type === 'investor' ){
+          console.log( 'investor' + item.id);
+          q_Investors.push(item);
+          console.log( q_Investors);
+        }
+        if(item.type === 'startup' ){
+          console.log( 'startup' + item.id);
+          q_SUps.push(item);
+          console.log( q_SUps);
+        }
+        if(item.type === 'partners' ){
+          console.log( 'investor' + item.id);
+          q_Partners.push(item);
+          console.log( q_Partners);
+        }
+       
+      })
+      setQuestions(categories[0])
+      setIsLoaded(true)
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const refreshGsap = () => {
     list.setQuestionsIsOpened(true);
@@ -38,6 +79,7 @@ const FaqQuestions = observer(() => {
   useEffect(() => {
     prevLink.current = currentCateg;
     setQuestions(categories[currentCateg]);
+    console.log(questions);
     refreshGsap();
   }, [currentCateg]);
 
@@ -65,7 +107,7 @@ const FaqQuestions = observer(() => {
         </div>
 
         <div className="questionsWrap">
-          {questions.map((q, index) => (
+          {isLoaded ? questions.map((q, index) => (
             //   <CSSTransition in={switcher} classNames="dealFlowWhite" timeout={1300} >
             <div
               className={`question ${q.iconOpened ? "question_opened" : ""}`}
@@ -76,10 +118,13 @@ const FaqQuestions = observer(() => {
                 <span>{q.question}</span>
                 {q.iconOpened ? <Minus /> : <Plus />}
               </div>
-              <div className="question__answer">{q.answer}</div>
+              <div className="question__answer"  dangerouslySetInnerHTML={{ __html: q.answer}}></div>
             </div>
             //   </CSSTransition>
-          ))}
+          ))
+        :
+        ''
+        }
         </div>
       </div>
     </div>
