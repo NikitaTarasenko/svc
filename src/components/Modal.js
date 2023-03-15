@@ -19,20 +19,21 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
 
   useEffect(() => {
     const data = toJS(list.listData);
-    if (data.length !== 0) {
+    if (data.length !== 0 && data[0] !== null) {
       setCurrentData(data[list.currentListItem]);
+      setIsLoaded(true);
     }
   }, [list.listData]);
 
-  useEffect(() => {
-    if (
-      JSON.stringify(currentData) !== "{}" &&
-      typeof currentData !== "undefined" &&
-      typeof currentData.links === "object"
-    ) {
-      setIsLoaded(true);
-    }
-  }, [currentData]);
+  // useEffect(() => {
+  //   if (
+  //     JSON.stringify(currentData) !== "{}" &&
+  //     typeof currentData !== "undefined" &&
+  //     typeof currentData.links === "object"
+  //   ) {
+  //     setIsLoaded(true);
+  //   }
+  // }, [currentData]);
 
   useEffect(() => {
     const data = toJS(list.listData);

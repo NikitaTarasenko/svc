@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Linkdn from "../svgs/Linkdn";
 import Loader from "../uiElements/Loader";
 
 const Team = () => {
@@ -49,6 +50,9 @@ const Team = () => {
               </div>
               <div className="s_advisory__content__item__name">{card.name}</div>
               <div className="s_advisory__content__item__descr">{card.descr}</div>
+              <a href={card.linkdn} target="_blank" rel="noreferrer">
+                <Linkdn />
+              </a>
             </div>
           ))}
         </div>

@@ -6,10 +6,10 @@ import Swiper from "swiper";
 import axios from "axios";
 import { useState } from "react";
 import Loader from "../uiElements/Loader";
-import { UpcomEvData } from "../../utils/UpcomEvData";
+ 
 
 const UpcomingEvents = () => {
-  // let [mySwiper, setMySwiper] = useState(null);
+ 
   const [events, setEvents] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isNotLoadedImg, setNotLoadedImg] = useState(false);
@@ -56,18 +56,18 @@ const UpcomingEvents = () => {
         prevEl: ".SliderLeft"
       },
       breakpoints: {
-        1460: {
+        1645: {
           slidesPerView: 4,
           spaceBetweenSlides: 27
         },
         1160: {
           slidesPerView: 3,
-          spaceBetweenSlides: 27
+          spaceBetweenSlides: 25
         },
 
         790: {
           slidesPerView: 2,
-          spaceBetweenSlides: 27
+          spaceBetweenSlides: 25
         },
         // when window width is <= 499px
         1: {
@@ -134,7 +134,7 @@ const UpcomingEvents = () => {
                         <div className="timeLineEvents__item__head__time__date">{checkForLoader(card.date, "sm")}</div>
                         <div className="timeLineEvents__item__head__time__hours">{checkForLoader(card.time, "sm")}</div>
                       </div>
-                      <div className="timeLineEvents__item__head__status">{checkForLoader(card.status, "sm")}</div>
+                      <div className="timeLineEvents__item__head__status">{card.status}</div>
                     </div>
 
                     <div className="timeLineEvents__item__type">{checkForLoader(card.type, "sm")}</div>
@@ -157,7 +157,7 @@ const UpcomingEvents = () => {
                             onError={() => setNotLoadedImg(true)}
                           />
                         ) : (
-                          <Loader size="lg" color="white" />
+                          <Loader size="lg"   />
                         )}
                       </div>
                     </div>

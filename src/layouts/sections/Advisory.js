@@ -48,9 +48,9 @@ const Advisory = () => {
                 )}
               </div>
               <div className="s_advisory__content__item__name">
-                {card.name}
+                {card.name}   
                 <div className="s_advisory__content__item__name__flag">
-                  <img src={card.logo_flag} alt="flag" />
+                   <img src={card.logo_flag} alt="flag" /> 
                 </div>
               </div>
               <div className="s_advisory__content__item__descr">{card.description}</div>

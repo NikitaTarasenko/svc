@@ -118,7 +118,7 @@ const FaqQuestions = observer(() => {
                 <span>{q.question}</span>
                 {q.iconOpened ? <Minus /> : <Plus />}
               </div>
-              <div className="question__answer">{q.answer}</div>
+              <div className="question__answer"  dangerouslySetInnerHTML={{ __html: q.answer}}></div>
             </div>
             //   </CSSTransition>
           ))

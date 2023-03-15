@@ -3,16 +3,19 @@ import ArrowSmallRight from "../svgs/ArrowSmallRight";
 import ArrowUp from "../svgs/ArrowUp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
+import { FAQ_ROUTE } from "../../utils/consts";
 
 const WhatWeOffer = ({ reff }) => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const boxes = gsap.utils.toArray(".step");
 
     boxes.forEach((box, i) => {
-      // console.log(element.offsetHeight);
-      // console.log(box.offsetTop);
+ 
       gsap.fromTo(
         box,
         {
@@ -59,7 +62,7 @@ const WhatWeOffer = ({ reff }) => {
           </div>
           <div className="offerBlock__bottomRow">
             <div className="offerBlock__bottomRow__left">
-              <div className="offerBlock__bottomRow__left__block">
+              <div className="offerBlock__bottomRow__left__block" onClick={() => navigate(FAQ_ROUTE)}> 
                 <div className="offerBlock__bottomRow__left__head">
                   <div className="offerBlock__bottomRow__left__head__title">FAQs</div>
                   <ArrowSmallRight />
