@@ -1,8 +1,8 @@
 import { ABOUTUS_ROUTE, MAINPAGE_ROUTE, MEMBERSHIP_ROUTE,FAQ_ROUTE, ERROR_PAGE } from "./utils/consts"
-import Main from './pages/Main'
-import AboutUs from './pages/AboutUs'
-import Membership from './pages/Membership'
-import Faq from './pages/Faq'
+import {Main} from './pages/Main'
+import {AboutUs} from './pages/AboutUs'
+import {Membership} from './pages/Membership'
+import {Faq} from './pages/Faq'
 import PageError from "./pages/PageError"
 
 

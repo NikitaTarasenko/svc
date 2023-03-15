@@ -1,22 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react";
-import Modal from "../components/Modal";
-import Container from "../layouts/Container";
-import SectionGrey from "../layouts/sections/SectionGrey";
+import Modal from "../../../components/Modal";
+import Container from "../../../layouts/Container";
+import SectionGrey from "../../../layouts/sections/SectionGrey";
 import { observer } from "mobx-react-lite";
-import { Context } from "../index";
+import { Context } from "../../../index";
 import { toJS } from "mobx";
-import Footer from "../components/Footer";
-import OurMembersGet from "../layouts/sections/OurMembersGet";
-import AboutUsMain from "../layouts/sections/AboutUsMain";
-import Slider from "../components/Slider";
-import Criteria from "../layouts/sections/Criteria";
-import DealFlow from "../layouts/sections/DealFlow";
-import UpcomingEvents from "../layouts/sections/UpcomingEvents";
-import MainTop from "../layouts/sections/MainTop";
-import NavBar from "../components/NavBar";
+import Footer from "../../../components/Footer";
+import OurMembersGet from "../../../layouts/sections/OurMembersGet";
+import AboutUsMain from "../../../layouts/sections/AboutUsMain";
+import Slider from "../../../components/Slider";
+import Criteria from "../../../layouts/sections/Criteria";
+import DealFlow from "../../../layouts/sections/DealFlow";
+import UpcomingEvents from "../../../layouts/sections/UpcomingEvents";
+import MainTop from "../../../layouts/sections/MainTop";
+import NavBar from "../../../components/NavBar";
 import axios from "axios";
-import Loader from "../layouts/uiElements/Loader";
+import Loader from "../../../layouts/uiElements/Loader";
 
 const Main = observer(() => {
   const { list } = useContext(Context);

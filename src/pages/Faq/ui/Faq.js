@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import Container from "../layouts/Container";
-import FaqQuestions from "../layouts/sections/FaqQuestions";
+import Footer from "../../../components/Footer";
+import NavBar from "../../../components/NavBar";
+import Container from "../../../layouts/Container";
+import FaqQuestions from "../../../layouts/sections/FaqQuestions";
 
 const Faq = () => {
   return (
