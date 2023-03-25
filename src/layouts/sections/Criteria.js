@@ -1,10 +1,6 @@
 import React from "react";
 import Done from "../svgs/Done";
-// import Money from "../svgs/Money";
-// import Sun from "../svgs/Sun";
-// import Umbrella from "../svgs/Umbrella";
-// import Uniq from "../svgs/Uniq";
-// import VerySmallArrowDown from "../svgs/VerySmallArrowDown";
+
 
 const Criteria = () => {
   return (
@@ -38,17 +34,6 @@ const Criteria = () => {
               </span>
               or going to relocate to Silicon Valley or other parts of the United States.
             </div>
-            {/* <div className="section__criteria__fEnd">
-              <div>
-                <div className="secAboutUs__right__trac">
-                  <VerySmallArrowDown /> Our asessment
-                </div>
-                <div className="section__criteria__fEnd__text">
-                  The assessment is carried out according to hundreds of criteria that are individual for each project:
-                  financial performance, business model, revenue, competitors, and others.
-                </div>
-              </div>
-            </div> */}
           </div>
           <div className="section__criteria__right">
             <div className="section__criteria__right__item">

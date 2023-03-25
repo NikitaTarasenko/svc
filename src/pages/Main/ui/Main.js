@@ -53,8 +53,6 @@ const Main = observer(() => {
       if (toJS(list.listData)[0] !== null) {
         setIsLoading(false);
       }
-
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }

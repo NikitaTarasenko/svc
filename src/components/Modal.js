@@ -25,15 +25,6 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
     }
   }, [list.listData]);
 
-  // useEffect(() => {
-  //   if (
-  //     JSON.stringify(currentData) !== "{}" &&
-  //     typeof currentData !== "undefined" &&
-  //     typeof currentData.links === "object"
-  //   ) {
-  //     setIsLoaded(true);
-  //   }
-  // }, [currentData]);
 
   useEffect(() => {
     const data = toJS(list.listData);

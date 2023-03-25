@@ -23,7 +23,6 @@ const Team = () => {
       const response = await axios.get("/rest.php?target=team", { headers });
       setData(response.data);
       setIsLoading(false);
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
