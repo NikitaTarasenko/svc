@@ -65,11 +65,9 @@ const Main = observer(() => {
 
       links.forEach((item) => {
         item.addEventListener("mouseenter", () => {
-          // document.querySelector(".section__list__img").classList.add("section__list__img_anime");
           setIsSeenImg(true);
         });
         item.addEventListener("mouseleave", () => {
-          // document.querySelector(".section__list__img").classList.remove("section__list__img_anime");
           setIsSeenImg(false);
           setCurrentImg("");
         });
@@ -79,9 +77,6 @@ const Main = observer(() => {
 
   useEffect(() => {
     if (currentImg !== "") {
-    //  setTimeout(()=>{
-    //   document.querySelector(".section__list__img").classList.remove("section__list__img_anime");
-    //  },300)
       setNotLoadedImg(false);
     }  
   }, [currentImg]);

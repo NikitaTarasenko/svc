@@ -1174,7 +1174,7 @@ a:focus::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: calc(50% - 1.2px);
+    left: calc(50% - 1px);
     display: block;
     width: 2px;
     height: 17px;
@@ -5101,7 +5101,7 @@ a:focus::after {
     }
 
     .s__upcomingEvents__head {
-        padding: 0 44px;
+        padding: 0 20px;
         margin-bottom: 0;
     }
 
