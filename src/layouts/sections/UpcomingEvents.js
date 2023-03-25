@@ -18,11 +18,8 @@ const UpcomingEvents = () => {
   }, []);
 
   useEffect(() => {
-    console.log(isLoaded);
-    // Object.values(events).map(event => console.log(event))
     if (isLoaded) {
       animationOnHover();
-      console.log("isLoaded");
     }
   }, [events]);
 
@@ -35,7 +32,6 @@ const UpcomingEvents = () => {
 
     try {
       const response = await axios.get("/rest.php?target=event", { headers });
-      console.log(response.data);
       setEvents(response.data);
       setIsLoaded(true);
     } catch (error) {

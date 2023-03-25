@@ -2,10 +2,9 @@ import axios from "axios";
 import { observer } from "mobx-react-lite";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../..";
- 
 import Minus from "../svgs/Minus";
 import Plus from "../svgs/Plus";
-// import { CSSTransition } from "react-transition-group";
+
 
 const FaqQuestions = observer(() => {
   const { list } = useContext(Context);
@@ -36,19 +35,13 @@ const FaqQuestions = observer(() => {
       
       Object.values(response.data).forEach((item) => {
         if(item.type === 'investor' ){
-          console.log( 'investor' + item.id);
           q_Investors.push(item);
-          console.log( q_Investors);
         }
         if(item.type === 'startup' ){
-          console.log( 'startup' + item.id);
           q_SUps.push(item);
-          console.log( q_SUps);
         }
         if(item.type === 'partners' ){
-          console.log( 'investor' + item.id);
           q_Partners.push(item);
-          console.log( q_Partners);
         }
        
       })
@@ -79,7 +72,6 @@ const FaqQuestions = observer(() => {
   useEffect(() => {
     prevLink.current = currentCateg;
     setQuestions(categories[currentCateg]);
-    console.log(questions);
     refreshGsap();
   }, [currentCateg]);
 
@@ -108,7 +100,6 @@ const FaqQuestions = observer(() => {
 
         <div className="questionsWrap">
           {isLoaded ? questions.map((q, index) => (
-            //   <CSSTransition in={switcher} classNames="dealFlowWhite" timeout={1300} >
             <div
               className={`question ${q.iconOpened ? "question_opened" : ""}`}
               onClick={() => questionClickHandle(q.id, !q.iconOpened)}
@@ -120,7 +111,7 @@ const FaqQuestions = observer(() => {
               </div>
               <div className="question__answer"  dangerouslySetInnerHTML={{ __html: q.answer}}></div>
             </div>
-            //   </CSSTransition>
+
           ))
         :
         ''

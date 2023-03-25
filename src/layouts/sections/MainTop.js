@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const MainTop = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+  console.log(isMobile);
   return (
     <section className="section mainTop" autoPlay loop muted>
-      <video className="videoMain" autoPlay loop muted>
-        <source src="img/videoBg.mp4" type="video/mp4" />
-      </video>
+      {!isMobile ? (
+        <video className="videoMain" autoPlay loop muted>
+          <source src="img/videoBg.mp4" type="video/mp4" />
+        </video>
+      ) : (
+        <img className="mobileImgMain" src="img/mobileMain.jpg" alt="MobileImage" />
+      )}
       <div className="mainTop__Wrap">
         <div className="sectionWrap sectionWrap_noFlex">
           <div className="mainTop__blue">
