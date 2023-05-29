@@ -30,33 +30,33 @@ const Main = observer(() => {
   const [isNotLoadedImg, setNotLoadedImg] = useState(true);
  
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     setImgStyle(isSeenImg ? "showImg" : "hideImg");
   }, [isSeenImg]);
 
-  async function getData() {
-    const headers = {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      " Access-Control-Allow-Origin": "http://spr.sv.club"
-    };
+  // async function getData() {
+  //   const headers = {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //     " Access-Control-Allow-Origin": "http://spr.sv.club"
+  //   };
 
-    try {
-      const response = await axios.get("/rest.php?target=portfolio", { headers });
-      list.setListData(response.data);
-      setData(toJS(list.listData));
+  //   try {
+  //     const response = await axios.get("/rest.php?target=portfolio", { headers });
+  //     list.setListData(response.data);
+  //     setData(toJS(list.listData));
 
-      if (toJS(list.listData)[0] !== null) {
-        setIsLoading(false);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //     if (toJS(list.listData)[0] !== null) {
+  //       setIsLoading(false);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
   useEffect(() => {
     if (!isLoading) {
       const links = document.querySelectorAll(".section__list__item");

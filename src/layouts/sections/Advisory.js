@@ -8,25 +8,25 @@ const Advisory = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isNotLoadedImg, setNotLoadedImg] = useState(false);
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
-  async function getData() {
-    const headers = {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      " Access-Control-Allow-Origin": "http://spr.sv.club"
-    };
+  // async function getData() {
+  //   const headers = {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //     " Access-Control-Allow-Origin": "http://spr.sv.club"
+  //   };
 
-    try {
-      const response = await axios.get("/rest.php?target=advisory", { headers });
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //   try {
+  //     const response = await axios.get("/rest.php?target=advisory", { headers });
+  //     setData(response.data);
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   return (
     <div className="section s_advisory">

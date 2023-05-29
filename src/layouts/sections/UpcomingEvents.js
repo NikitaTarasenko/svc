@@ -13,9 +13,9 @@ const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isNotLoadedImg, setNotLoadedImg] = useState(false);
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     if (isLoaded) {
@@ -23,21 +23,21 @@ const UpcomingEvents = () => {
     }
   }, [events]);
 
-  async function getData() {
-    const headers = {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      " Access-Control-Allow-Origin": "http://spr.sv.club"
-    };
+  // async function getData() {
+  //   const headers = {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //     " Access-Control-Allow-Origin": "http://spr.sv.club"
+  //   };
 
-    try {
-      const response = await axios.get("/rest.php?target=event", { headers });
-      setEvents(response.data);
-      setIsLoaded(true);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //   try {
+  //     const response = await axios.get("/rest.php?target=event", { headers });
+  //     setEvents(response.data);
+  //     setIsLoaded(true);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   useEffect(() => {
     const mySwiper = new Swiper(".mySwiper3", {

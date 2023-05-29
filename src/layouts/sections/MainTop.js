@@ -14,7 +14,7 @@ const MainTop = () => {
   }, []);
 
   const isMobile = width <= 768;
-  console.log(isMobile);
+ 
   return (
     <section className="section mainTop" autoPlay loop muted>
       {!isMobile ? (

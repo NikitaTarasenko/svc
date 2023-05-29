@@ -19,38 +19,38 @@ const FaqQuestions = observer(() => {
   const linkRef = useRef([]);
   const prevLink = useRef();
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
-  async function getData() {
-    const headers = {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      " Access-Control-Allow-Origin": "http://spr.sv.club"
-    };
+  // async function getData() {
+  //   const headers = {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //     " Access-Control-Allow-Origin": "http://spr.sv.club"
+  //   };
 
-    try {
-      const response = await axios.get("/rest.php?target=faq", { headers });
+  //   try {
+  //     const response = await axios.get("/rest.php?target=faq", { headers });
       
-      Object.values(response.data).forEach((item) => {
-        if(item.type === 'investor' ){
-          q_Investors.push(item);
-        }
-        if(item.type === 'startup' ){
-          q_SUps.push(item);
-        }
-        if(item.type === 'partners' ){
-          q_Partners.push(item);
-        }
+  //     Object.values(response.data).forEach((item) => {
+  //       if(item.type === 'investor' ){
+  //         q_Investors.push(item);
+  //       }
+  //       if(item.type === 'startup' ){
+  //         q_SUps.push(item);
+  //       }
+  //       if(item.type === 'partners' ){
+  //         q_Partners.push(item);
+  //       }
        
-      })
-      setQuestions(categories[0])
-      setIsLoaded(true)
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //     })
+  //     setQuestions(categories[0])
+  //     setIsLoaded(true)
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   const refreshGsap = () => {
     list.setQuestionsIsOpened(true);
