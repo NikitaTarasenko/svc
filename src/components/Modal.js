@@ -6,6 +6,7 @@ import { Context } from "../index";
 import { toJS } from "mobx";
 import CloseBtn from "../layouts/uiElements/CloseBtn";
 import Loader from "../layouts/uiElements/Loader";
+import db from "../utils/db.json";
 
 const Modal = observer(({ isOpen, clickOutSide }) => {
   const { list } = useContext(Context);
@@ -18,12 +19,11 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
   const visibilityContent = isOpen ? "modalBlock_open" : "modalBlock_closed";
 
   useEffect(() => {
-    const data = toJS(list.listData);
-    if (data.length !== 0 && data[0] !== null) {
-      setCurrentData(data[list.currentListItem]);
-      setIsLoaded(true);
-    }
-  }, [list.listData]);
+    list.setListData(db.listJSON);
+    // console.log(list.listData);
+    setCurrentData(toJS(list.listData[list.currentListItem]));
+    setIsLoaded(true)
+  }, [list]);
 
 
   useEffect(() => {
@@ -45,57 +45,51 @@ const Modal = observer(({ isOpen, clickOutSide }) => {
   return (
     <div className={`modalWrapper ${visibilityModal}`} onClick={clickOutSide}>
       <div className={`modalBlock ${visibilityContent}`} onClick={(e) => e.stopPropagation()}>
-        {isLoaded ? (
-          <div className="modalBlock__content">
-            <div>
-              <div className="modalBlock__content__head">
-                <div className="modalBlock__content__head__title">{currentData.name}</div>
-                <CloseBtn clickHandler={clickOutSide} />
-              </div>
-              <div className="modalBlock__content__wrapper">
-                <div className="modalBlock__content__tags">
-                  {Object.entries(currentData.links).map(([linkName, value], index) => (
-                    <Tag key={index} link={value}>
-                      {linkName}
-                    </Tag>
-                  ))}
-                </div>
-
-                <div className="modalBlock__content__location">
-                  <img src="img/location.svg" alt="Location" />
-                  <div className="modalBlock__content__location__text">{currentData.location}</div>
-                </div>
-
-                <div className="modalBlock__content__description">{currentData.description}</div>
-
-                <div className="modalBlock__content__date">{currentData.date}</div>
-
-                <div className="modalBlock__content__logo">
-                  {!isNotLoadedImg ? (
-                    <img
-                      src={currentData.logo}
-                      alt="logo"
-                      onLoad={() => setNotLoadedImg(false)}
-                      onError={() => setNotLoadedImg(true)}
-                    />
-                  ) : (
-                   <div className="modal_loader">
-                     <Loader size="lg"  />
-                   </div>
-                  )}
+        <div className="modalBlock__content">
+          <div>
+            <div className="modalBlock__content__head">
+              <div className="modalBlock__content__head__title">{currentData.name}</div>
+              <div className="closeBtn" onClick={clickOutSide}>
+                <div className="close-button">
+                  <div className="in">
+                    <div className="close-button-block"></div>
+                    <div className="close-button-block"></div>
+                  </div>
+                  <div className="out">
+                    <div className="close-button-block"></div>
+                    <div className="close-button-block"></div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="modalBlock__content__wrapper">
+              <div className="modalBlock__content__tags">
+                {currentData.tags && currentData.tags.map((tag, index) => (
+                  <Tag key={index + 1111}>{tag}</Tag>
+                ))}
+              </div>
 
- 
+              <div className="modalBlock__content__location">
+                <img src="img/location.svg" alt="Location" />
+                <div className="modalBlock__content__location__text">{currentData.location}</div>
+              </div>
+
+              <div className="modalBlock__content__description">{currentData.description}</div>
+
+              <div className="modalBlock__content__date">{currentData.date}</div>
+
+              <div className="modalBlock__content__logo">
+                <img src={currentData.img} alt="logo" />
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="modal__bottom"> */}
             <Button type="btnModalGrey" onClick={handleClick}>
               Next deal
             </Button>
- 
-          </div>
-        ) : (
-          "Loading..."
-        )}
+          {/* </div> */}
+        </div>
       </div>
     </div>
   );
